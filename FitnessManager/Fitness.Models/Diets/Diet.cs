@@ -5,6 +5,6 @@
     public abstract class Diet : IDiet
     {
 
-        //TODO: This class must be implemented 
+        //TODO: This class must be implemented!
     }
 }

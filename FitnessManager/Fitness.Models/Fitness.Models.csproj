@@ -61,6 +61,7 @@
     <Compile Include="Interfaces\IDiet.cs" />
     <Compile Include="TrainingPrograms\RookieTraining.cs" />
     <Compile Include="TrainingPrograms\StrengthTraining.cs" />
+    <Compile Include="TrainingPrograms\TrainingDay.cs" />
     <Compile Include="TrainingPrograms\TrainingProgram.cs" />
     <Compile Include="TrainingPrograms\WeightLossTraining.cs" />
     <Compile Include="UserRegimens\Regimen.cs" />

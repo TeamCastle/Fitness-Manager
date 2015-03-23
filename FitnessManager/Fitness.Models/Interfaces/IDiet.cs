@@ -2,6 +2,6 @@
 {
     public interface IDiet
     {
-        //TODO: This interface must be implemented 
+        void ShowDietCalculation(); 
     }
 }

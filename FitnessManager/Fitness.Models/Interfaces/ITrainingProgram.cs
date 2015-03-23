@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Fitness.Models.Interfaces
+﻿namespace Fitness.Models.Interfaces
 {
+    using Fitness.Models.TrainingPrograms;
+
     public interface ITrainingProgram
     {
-        //TODO: This interface must be implemented 
+        //TODO: This interface must be implemented
+
+        void ShowCurrentDayExercises(TrainingDay day);
     }
 }

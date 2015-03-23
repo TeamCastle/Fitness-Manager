@@ -8,7 +8,7 @@
 
     using Fitness.Models.Interfaces;
 
-    class RookiesNutritions : Feeding, IFeedRookies
+    public class RookiesNutritions : Feeding, IFeedRookies
     {
     }
 }

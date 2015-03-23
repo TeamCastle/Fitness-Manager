@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Models", "Fitness.Models\Fitness.Models.csproj", "{FEB36650-4831-4B0B-9334-6855FAA488CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Console", "Fitness.Manager\Fitness.Console.csproj", "{54FB0288-06AD-4C37-97EC-4978DDB47133}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Console", "Fitness.Console\Fitness.Console.csproj", "{54FB0288-06AD-4C37-97EC-4978DDB47133}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.WPF", "Fitness.WPF\Fitness.WPF.csproj", "{8BD022E6-77C2-48B5-B02D-E6DD9111A129}"
 EndProject

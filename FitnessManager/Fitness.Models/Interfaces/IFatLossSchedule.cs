@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Fitness.Models.Interfaces
+﻿namespace Fitness.Models.Interfaces
 {
-    interface IFatLossSchedule
+    using System;
+
+    public interface IFatLossSchedule
     {
     }
 }

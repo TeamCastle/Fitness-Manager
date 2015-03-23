@@ -8,7 +8,7 @@
 
     using Fitness.Models.Interfaces;
 
-    class StrengthNutrition : Feeding, IFeedStrong
+    public class StrengthNutrition : Feeding, IFeedStrong
     {
     }
 }

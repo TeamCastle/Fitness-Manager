@@ -6,13 +6,13 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using Fitness.Models.Users;
+    using Fitness.Models;
 
     public class FitnessManager
     {
         public static void Main()
         {
-            User user = null;
+            //User user = null;
 
         }
     }

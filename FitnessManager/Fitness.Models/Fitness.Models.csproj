@@ -59,13 +59,17 @@
     <Compile Include="Interfaces\IFeedRookies.cs" />
     <Compile Include="Interfaces\IFeedStrong.cs" />
     <Compile Include="Interfaces\IUser.cs" />
-    <Compile Include="Users\FatUser.cs" />
+    <Compile Include="Interfaces\ITrainingProgram.cs" />
+    <Compile Include="Interfaces\IRegimen.cs" />
+    <Compile Include="Interfaces\IDiet.cs" />
+    <Compile Include="UserRegimen\Regimen.cs" />
+    <Compile Include="UserRegimen\WeightLoss.cs" />
     <Compile Include="Interfaces\IFatLossSchedule.cs" />
     <Compile Include="Interfaces\IRookieSchedule.cs" />
     <Compile Include="Interfaces\IStrengthGainSchedule.cs" />
-    <Compile Include="Users\Rookie.cs" />
-    <Compile Include="Users\StrengthUser.cs" />
-    <Compile Include="Users\User.cs" />
+    <Compile Include="UserRegimen\Rookie.cs" />
+    <Compile Include="UserRegimen\Strength.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

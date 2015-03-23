@@ -1,11 +1,11 @@
-﻿namespace Fitness.Models.Users
+﻿namespace Fitness.Models
 {
     using System;
     using System.Text.RegularExpressions;
 
     using Fitness.Models.Interfaces;
 
-    public abstract class User : IUser
+    public class User : IUser
     {
         private string username;
         private string password;
@@ -14,6 +14,7 @@
         {
             this.Username = username;
             this.Password = password;
+            this.UserRegimen = null;
         }
 
         public string Username
@@ -46,6 +47,8 @@
                 this.password = value;
             }
         }
+
+        public IRegimen UserRegimen { get; set; }
 
         public string AvatarPath { get; set; }
     }

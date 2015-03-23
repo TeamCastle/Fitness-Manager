@@ -2,8 +2,10 @@
 {
     public interface IUser
     {
-        string Username;
+        string Username { get; set; }
 
-        string Password;
+        string Password { get; set; }
+
+        IRegimen UserRegimen { get; set; }
     }
 }

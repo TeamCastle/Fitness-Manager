@@ -1,6 +1,6 @@
 ﻿namespace Fitness.Models.Interfaces
 {
-    public class IDiet
+    public interface IDiet
     {
         //TODO: This interface must be implemented 
     }

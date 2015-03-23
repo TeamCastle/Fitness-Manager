@@ -59,6 +59,10 @@
     <Compile Include="Interfaces\ITrainingProgram.cs" />
     <Compile Include="Interfaces\IRegimen.cs" />
     <Compile Include="Interfaces\IDiet.cs" />
+    <Compile Include="TrainingPrograms\RookieTraining.cs" />
+    <Compile Include="TrainingPrograms\StrengthTraining.cs" />
+    <Compile Include="TrainingPrograms\TrainingProgram.cs" />
+    <Compile Include="TrainingPrograms\WeightLossTraining.cs" />
     <Compile Include="UserRegimens\Regimen.cs" />
     <Compile Include="UserRegimens\WeightLoss.cs" />
     <Compile Include="UserRegimens\Rookie.cs" />
@@ -67,7 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

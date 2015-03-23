@@ -3,7 +3,7 @@
     /// <summary>
     /// This interface must be implemented by all kind of regimens
     /// </summary>
-    public class IRegimen
+    public interface IRegimen
     {
         string Name { get; set; }
 

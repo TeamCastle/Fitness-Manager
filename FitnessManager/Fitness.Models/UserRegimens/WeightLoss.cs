@@ -1,4 +1,4 @@
-﻿namespace Fitness.Models.UserRegimen
+﻿namespace Fitness.Models.UserRegimens
 {
     using Fitness.Models.Interfaces;
 

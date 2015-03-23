@@ -7,6 +7,6 @@ namespace Fitness.Models.Interfaces
 {
     public interface ITrainingProgram
     {
-
+        //TODO: This interface must be implemented 
     }
 }

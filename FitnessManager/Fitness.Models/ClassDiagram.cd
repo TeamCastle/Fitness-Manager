@@ -85,7 +85,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.Feedings.FattiesNutrition" Collapsed="true">
-    <Position X="21.75" Y="8.75" Width="1.5" />
+    <Position X="21.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Feedings\FattiesNutrition.cs</FileName>
@@ -93,14 +93,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Fitness.Models.Feedings.Feeding" Collapsed="true">
-    <Position X="24" Y="7.5" Width="1.5" />
+    <Position X="24" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Feedings\Feeding.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.Feedings.RookiesNutritions" Collapsed="true">
-    <Position X="24" Y="8.75" Width="1.5" />
+    <Position X="24" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Feedings\RookiesNutritions.cs</FileName>
@@ -108,86 +108,20 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Fitness.Models.Feedings.StrengthNutrition" Collapsed="true">
-    <Position X="26.25" Y="8.75" Width="1.5" />
+    <Position X="26.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Feedings\StrengthNutrition.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Fitness.Models.Users.FatUser" Collapsed="true">
-    <Position X="24" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Users\FatUser.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Fitness.Models.Users.Rookie" Collapsed="true">
-    <Position X="26.25" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Users\Rookie.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Fitness.Models.Users.StrengthUser" Collapsed="true">
-    <Position X="21.75" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Users\StrengthUser.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="Fitness.Models.User" Collapsed="true">
-    <Position X="24" Y="4.5" Width="1.5" />
+    <Position X="42.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAAAAAQAAAAEAAAAAAAACAAAAAgAAAAA=</HashCode>
+      <HashCode>gAAAAAAAAAAAAAAAAYAAAAEAAAAAAAACAAAAAgAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="Fitness.Models.Interfaces.IFatLossSchedule" Collapsed="true">
-    <Position X="42.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IFatLossSchedule.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Fitness.Models.Interfaces.IFeedFatties" Collapsed="true">
-    <Position X="44.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IFeedFatties.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Fitness.Models.Interfaces.IFeedRookies" Collapsed="true">
-    <Position X="46.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IFeedRookies.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Fitness.Models.Interfaces.IFeedStrong" Collapsed="true">
-    <Position X="42.75" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IFeedStrong.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Fitness.Models.Interfaces.IRookieSchedule" Collapsed="true">
-    <Position X="44.5" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IRookieSchedule.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Fitness.Models.Interfaces.IStrengthGainSchedule" Collapsed="true">
-    <Position X="46.25" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IStrengthGainSchedule.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

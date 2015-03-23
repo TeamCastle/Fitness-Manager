@@ -58,6 +58,7 @@
     <Compile Include="Interfaces\IFeedFatties.cs" />
     <Compile Include="Interfaces\IFeedRookies.cs" />
     <Compile Include="Interfaces\IFeedStrong.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Users\FatUser.cs" />
     <Compile Include="Interfaces\IFatLossSchedule.cs" />
     <Compile Include="Interfaces\IRookieSchedule.cs" />

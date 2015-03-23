@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Models", "Fitness.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Console", "Fitness.Console\Fitness.Console.csproj", "{54FB0288-06AD-4C37-97EC-4978DDB47133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.WPF", "Fitness.WPF\Fitness.WPF.csproj", "{8BD022E6-77C2-48B5-B02D-E6DD9111A129}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Data", "Fitness.Data\Fitness.Data.csproj", "{BBD42422-E711-432E-A5FD-26F481999BD4}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{54FB0288-06AD-4C37-97EC-4978DDB47133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54FB0288-06AD-4C37-97EC-4978DDB47133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54FB0288-06AD-4C37-97EC-4978DDB47133}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8BD022E6-77C2-48B5-B02D-E6DD9111A129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BD022E6-77C2-48B5-B02D-E6DD9111A129}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BD022E6-77C2-48B5-B02D-E6DD9111A129}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BD022E6-77C2-48B5-B02D-E6DD9111A129}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BBD42422-E711-432E-A5FD-26F481999BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBD42422-E711-432E-A5FD-26F481999BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD42422-E711-432E-A5FD-26F481999BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU

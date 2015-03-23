@@ -1,18 +1,20 @@
 ﻿namespace Fitness.Models.Users
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Text.RegularExpressions;
-    using System.Threading.Tasks;
 
-    public abstract class User
+    using Fitness.Models.Interfaces;
+
+    public abstract class User : IUser
     {
         private string username;
-
         private string password;
 
-        private string avatarPath;
+        public User(string username, string password)
+        {
+            this.Username = username;
+            this.Password = password;
+        }
 
         public string Username
         {
@@ -26,10 +28,25 @@
                 {
                     this.username = value;
                 }
+                else
+                {
+                    throw new ArgumentException("Invalid Username!");
+                }
             }
         }
 
-        public string Password { set; private get; }
-        public string AvatarPath { set; get; }
+        public string Password
+        {
+            get
+            {
+                return this.password;
+            } 
+            set
+            {
+                this.password = value;
+            }
+        }
+
+        public string AvatarPath { get; set; }
     }
 }

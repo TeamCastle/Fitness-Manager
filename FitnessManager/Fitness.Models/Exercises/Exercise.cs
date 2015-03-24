@@ -1,12 +1,18 @@
 ﻿namespace Fitness.Models.Exercises
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    public abstract class Exercise
+    public class Exercise
     {
+        public Exercise(string description, ExerciseType type, MuscleGroup muscleGroup)
+        {
+            this.Description = description;
+            this.ExerciseType = type;
+            this.MuscleGroup = muscleGroup;
+        }
+
+        public string Description { get; set; }
+
+        public ExerciseType ExerciseType { get; set; }
+
+        public MuscleGroup MuscleGroup { get; set; }
     }
 }

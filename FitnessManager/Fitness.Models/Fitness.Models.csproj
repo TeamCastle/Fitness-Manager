@@ -40,17 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exercises\Exercise.cs" />
-    <Compile Include="Exercises\LowerBody\BackLegs.cs" />
-    <Compile Include="Exercises\LowerBody\Calves.cs" />
-    <Compile Include="Exercises\LowerBody\FrontLegs.cs" />
-    <Compile Include="Exercises\LowerBody\LowerBody.cs" />
-    <Compile Include="Exercises\UpperBody\Abs.cs" />
-    <Compile Include="Exercises\UpperBody\Back.cs" />
-    <Compile Include="Exercises\UpperBody\Biceps.cs" />
-    <Compile Include="Exercises\UpperBody\Chest.cs" />
-    <Compile Include="Exercises\UpperBody\Shoulders.cs" />
-    <Compile Include="Exercises\UpperBody\Triceps.cs" />
-    <Compile Include="Exercises\UpperBody\UpperBody.cs" />
+    <Compile Include="Exercises\ExerciseType.cs" />
+    <Compile Include="Exercises\MuscleGroup.cs" />
     <Compile Include="Diets\WeightLossDiet.cs" />
     <Compile Include="Diets\Diet.cs" />
     <Compile Include="Diets\RookieDiet.cs" />

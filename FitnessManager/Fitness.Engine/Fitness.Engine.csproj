@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FEB36650-4831-4B0B-9334-6855FAA488CF}</ProjectGuid>
+    <ProjectGuid>{01B6C8E5-45E0-4E58-9CC6-D78940A83142}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fitness.Models</RootNamespace>
-    <AssemblyName>Fitness.Models</AssemblyName>
+    <RootNamespace>Fitness.Engine</RootNamespace>
+    <AssemblyName>Fitness.Engine</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,33 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exercises\Exercise.cs" />
-    <Compile Include="Exercises\ExerciseType.cs" />
-    <Compile Include="Exercises\MuscleGroup.cs" />
-    <Compile Include="Diets\WeightLossDiet.cs" />
-    <Compile Include="Diets\Diet.cs" />
-    <Compile Include="Diets\RookieDiet.cs" />
-    <Compile Include="Diets\StrengthDiet.cs" />
-    <Compile Include="Interfaces\ITrainingFactory.cs" />
-    <Compile Include="Interfaces\IUser.cs" />
-    <Compile Include="Interfaces\ITrainingProgram.cs" />
-    <Compile Include="Interfaces\IRegimen.cs" />
-    <Compile Include="Interfaces\IDiet.cs" />
-    <Compile Include="TrainingPrograms\Intensity.cs" />
-    <Compile Include="TrainingPrograms\RookieTraining.cs" />
-    <Compile Include="TrainingPrograms\StrengthTraining.cs" />
-    <Compile Include="TrainingPrograms\TrainingDay.cs" />
-    <Compile Include="TrainingPrograms\TrainingProgram.cs" />
-    <Compile Include="TrainingPrograms\WeightLossTraining.cs" />
-    <Compile Include="UserRegimens\Regimen.cs" />
-    <Compile Include="UserRegimens\WeightLoss.cs" />
-    <Compile Include="UserRegimens\Rookie.cs" />
-    <Compile Include="UserRegimens\Strength.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Factories\TrainingFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <ProjectReference Include="..\Fitness.Models\Fitness.Models.csproj">
+      <Project>{feb36650-4831-4b0b-9334-6855faa488cf}</Project>
+      <Name>Fitness.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

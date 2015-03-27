@@ -1,14 +1,9 @@
-﻿using Fitness.Models.TrainingPrograms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Fitness.Models.Interfaces
+﻿namespace Fitness.Models.Interfaces
 {
+    using Fitness.Models.TrainingPrograms;
+
     public interface ITrainingFactory
     {
-        ITrainingProgram CreateTrainingProgram(string name, Intensity intensity);
+        ITrainingProgram CreateTrainingProgram(string name, Intensity intensity, ProgramType progType);
     }
 }

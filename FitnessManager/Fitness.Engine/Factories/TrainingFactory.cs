@@ -7,9 +7,24 @@
 
     public class TrainingFactory : ITrainingFactory
     {
-        public ITrainingProgram CreateTrainingProgram(string name, Intensity intensity)
+        public ITrainingProgram CreateTrainingProgram(string name, Intensity intensity, ProgramType programType)
         {
-            throw new NotImplementedException();
+            if (programType == ProgramType.Rookie)
+            {
+                return new RookieTraining(name, intensity);
+            }
+            else if (programType == ProgramType.Strength)
+            {
+                return new StrengthTraining(name, intensity);
+            }
+            else if (programType == ProgramType.WeightLoss)
+            {
+                return new WeightLossTraining(name, intensity);
+            }
+            else
+            {
+                throw new InvalidProgramException(programType.ToString());
+            }
         }
     }
 }

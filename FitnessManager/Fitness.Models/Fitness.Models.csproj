@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\IRegimen.cs" />
     <Compile Include="Interfaces\IDiet.cs" />
     <Compile Include="TrainingPrograms\Intensity.cs" />
+    <Compile Include="TrainingPrograms\ProgramType.cs" />
     <Compile Include="TrainingPrograms\RookieTraining.cs" />
     <Compile Include="TrainingPrograms\StrengthTraining.cs" />
     <Compile Include="TrainingPrograms\TrainingDay.cs" />

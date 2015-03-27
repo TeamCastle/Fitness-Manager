@@ -41,11 +41,14 @@
   <ItemGroup>
     <Compile Include="Exercises\Exercise.cs" />
     <Compile Include="Exercises\ExerciseType.cs" />
+    <Compile Include="Exercises\LowerBodyExercise.cs" />
     <Compile Include="Exercises\MuscleGroup.cs" />
     <Compile Include="Diets\WeightLossDiet.cs" />
     <Compile Include="Diets\Diet.cs" />
     <Compile Include="Diets\RookieDiet.cs" />
     <Compile Include="Diets\StrengthDiet.cs" />
+    <Compile Include="Exercises\UpperBodyExercise.cs" />
+    <Compile Include="Interfaces\IExercise.cs" />
     <Compile Include="Interfaces\ITrainingFactory.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Interfaces\ITrainingProgram.cs" />

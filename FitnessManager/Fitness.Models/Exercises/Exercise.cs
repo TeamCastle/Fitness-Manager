@@ -1,6 +1,8 @@
 ﻿namespace Fitness.Models.Exercises
 {
-    public class Exercise
+    using Fitness.Models.Interfaces;
+
+    public abstract class Exercise : IExercise
     {
         public Exercise(string description, ExerciseType type, MuscleGroup muscleGroup)
         {

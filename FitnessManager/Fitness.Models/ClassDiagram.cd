@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Fitness.Models.Diets.Diet" Collapsed="true">
-    <Position X="2.75" Y="6.5" Width="1.5" />
+    <Position X="7.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Diets\Diet.cs</FileName>
@@ -9,64 +9,79 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Fitness.Models.Diets.RookieDiet" Collapsed="true">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+    <Position X="5.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Diets\RookieDiet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.Diets.StrengthDiet" Collapsed="true">
-    <Position X="2.75" Y="7.75" Width="1.5" />
+    <Position X="7.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Diets\StrengthDiet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.Diets.WeightLossDiet" Collapsed="true">
-    <Position X="5" Y="7.75" Width="1.5" />
+    <Position X="9.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Diets\WeightLossDiet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.Exercises.Exercise" Collapsed="true">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAACAAgA=</HashCode>
       <FileName>Exercises\Exercise.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fitness.Models.Exercises.LowerBodyExercise" Collapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Exercises\LowerBodyExercise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.Models.Exercises.UpperBodyExercise" Collapsed="true">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Exercises\UpperBodyExercise.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.TrainingPrograms.RookieTraining" Collapsed="true">
-    <Position X="2.75" Y="4.75" Width="1.5" />
+    <Position X="9.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainingPrograms\RookieTraining.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.TrainingPrograms.StrengthTraining" Collapsed="true">
-    <Position X="5" Y="4.75" Width="1.5" />
+    <Position X="5.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainingPrograms\StrengthTraining.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.TrainingPrograms.TrainingProgram" Collapsed="true">
-    <Position X="2.75" Y="3.5" Width="1.5" />
+    <Position X="7.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQIAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainingPrograms\TrainingProgram.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Fitness.Models.TrainingPrograms.WeightLossTraining" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="7.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainingPrograms\WeightLossTraining.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.User" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="17.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAAAAAAYAAAAEAAAAAAAACAAAAAgAAAAA=</HashCode>
       <FileName>User.cs</FileName>
@@ -74,7 +89,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Fitness.Models.UserRegimens.Regimen" Collapsed="true">
-    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>UserRegimens\Regimen.cs</FileName>
@@ -82,70 +97,98 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Fitness.Models.UserRegimens.Rookie" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+    <Position X="5.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UserRegimens\Rookie.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.UserRegimens.Strength" Collapsed="true">
-    <Position X="5" Y="1.75" Width="1.5" />
+    <Position X="7.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UserRegimens\Strength.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fitness.Models.UserRegimens.WeightLoss" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="9.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UserRegimens\WeightLoss.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Fitness.Models.Interfaces.IDiet" Collapsed="true">
-    <Position X="7.5" Y="1.75" Width="1.5" />
+    <Position X="17.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IDiet.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="Fitness.Models.Interfaces.IExercise" Collapsed="true">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAACAAgA=</HashCode>
+      <FileName>Interfaces\IExercise.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="Fitness.Models.Interfaces.IRegimen" Collapsed="true">
-    <Position X="9.25" Y="1.75" Width="1.5" />
+    <Position X="21.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Interfaces\IRegimen.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="Fitness.Models.Interfaces.ITrainingFactory" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITrainingFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="Fitness.Models.Interfaces.ITrainingProgram" Collapsed="true">
-    <Position X="7.5" Y="2.5" Width="1.5" />
+    <Position X="19.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\ITrainingProgram.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Fitness.Models.Interfaces.IUser" Collapsed="true">
-    <Position X="9.25" Y="2.5" Width="1.5" />
+    <Position X="21.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAYAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IUser.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Fitness.Models.Exercises.ExerciseType" Collapsed="true">
-    <Position X="7.5" Y="3.5" Width="1.5" />
+    <Position X="17.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exercises\ExerciseType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Fitness.Models.Exercises.MuscleGroup" Collapsed="true">
-    <Position X="9.25" Y="3.5" Width="1.5" />
+    <Position X="21.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IQAAAABIAAAAQAAAoAAAEAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Exercises\MuscleGroup.cs</FileName>
     </TypeIdentifier>
   </Enum>
+  <Enum Name="Fitness.Models.TrainingPrograms.Intensity" Collapsed="true">
+    <Position X="19.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>TrainingPrograms\Intensity.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Fitness.Models.TrainingPrograms.ProgramType" Collapsed="true">
+    <Position X="17.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAABAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>TrainingPrograms\ProgramType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Enum Name="Fitness.Models.TrainingPrograms.TrainingDay" Collapsed="true">
-    <Position X="7.5" Y="4.25" Width="1.5" />
+    <Position X="19.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAACAAAAAAAAAAASAAIACAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainingPrograms\TrainingDay.cs</FileName>

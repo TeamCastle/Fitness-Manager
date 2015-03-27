@@ -5,9 +5,7 @@
 
     public abstract class Diet : IDiet
     {
-
         //TODO: This class must be implemented!
-
 
         public void ShowDietCalculation()
         {

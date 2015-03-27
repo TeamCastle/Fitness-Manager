@@ -2,10 +2,8 @@
 {
     public class LowerBodyExercise : Exercise
     {
-        const ExerciseType Type = ExerciseType.LowerBody;
-
         public LowerBodyExercise(string description, MuscleGroup muscleGroup)
-            : base(description, LowerBodyExercise.Type, muscleGroup)
+            : base(description, ExerciseType.LowerBody, muscleGroup)
         {
 
         }

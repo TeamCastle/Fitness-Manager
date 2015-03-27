@@ -1,6 +1,5 @@
 ﻿namespace Fitness.Models.UserRegimens
 {
-
     using Fitness.Models.Interfaces;
 
     /// <summary>

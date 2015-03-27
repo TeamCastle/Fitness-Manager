@@ -5,19 +5,20 @@
 
     public class InvalidTrainingException : Exception
     {
+        private const string InvalidStringFormat = "Invalid training type {0}";
+
         public InvalidTrainingException()
             : base()
         {
         }
 
         public InvalidTrainingException(string message)
-            :base(string.Format("Invalid training type {0}", message))
+            : base(string.Format(InvalidStringFormat, message))
         {
-            
         }
 
         public InvalidTrainingException(string message, Exception inner)
-            : base(string.Format("Invalid training type {0}", message), inner)
+            : base(string.Format(InvalidStringFormat, message), inner)
         {
         }
     }

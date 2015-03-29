@@ -33,12 +33,12 @@
             }
             set
             {
-                if (Regex.IsMatch(value, @"[a-zA-Z0-9]"))
+                if (!Regex.IsMatch(value, @"[a-zA-Z0-9]"))
                 {
-                    this.username = value;
+                    throw new ArgumentException("Invalid Username!");
                 }
 
-                throw new ArgumentException("Invalid Username!");
+                this.username = value;
             }
         }
 
@@ -50,12 +50,12 @@
             }
             set
             {
-                if (value.Length >= 5 && value.Length <= 20)
+                if (value.Length < 5 && value.Length > 20)
                 {
-                    this.password = value;
+                    throw new ArgumentException("Invalid Password!");
                 }
 
-                throw new ArgumentException("Invalid Password!");
+                this.password = value;
             }
         }
 

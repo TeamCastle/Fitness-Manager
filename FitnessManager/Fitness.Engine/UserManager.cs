@@ -4,48 +4,52 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using Fitness.Engine.Access;
     using Fitness.Models;
 
-    public static class UserManager
+    public class UserManager
     {
-        /// <summary>
-        /// Collection from Users and their login states ('true' for logged)
-        /// </summary>
-        public static Dictionary<User, bool> Users;
+        // Collection from Users and their login states ('true' for logged)
+        private Dictionary<User, bool> users;
+
+        public UserManager()
+        {
+            this.GetDbUsers();
+        }
 
         /// <summary>
         /// Creates a registration of some new user.
         /// </summary>
         /// <param name="user">The new user.</param>
-        public static void Register(User user)
+        public void Register(User user)
         {
-            if (Users.Any(u => u.Key.Username == user.Username))
+            if (this.users.Any(u => u.Key.Username == user.Username))
             {
                 throw new Exception("Such username is already used!");
             }
 
-            Users.Add(user, false);
+            this.users.Add(user, false);
         }
 
         /// <summary>
         /// Login ...
         /// </summary>
         /// <param name="user">The user.</param>
-        public static void Login(string username, string password)
+        public void Login(string username, string password)
         {
-            for (int i = 0; i < Users.Count; i++)
+            for (int i = 0; i < this.users.Count; i++)
             {
-                var currentUser = Users.ElementAt(i).Key;
+                var currentUser = this.users.ElementAt(i).Key;
                 if (currentUser.Username == username)
                 {
-                    if (Users.ElementAt(i).Value)
+                    if (this.users.ElementAt(i).Value)
                     {
                         throw new Exception("This user is already logged in!");
                     }
 
                     if (currentUser.Password == password)
                     {
-                        Users[currentUser] = true;
+                        this.users[currentUser] = true;
                         return;
                     }
 
@@ -60,24 +64,52 @@
         /// Logout ...
         /// </summary>
         /// <param name="user">The user.</param>
-        public static void Logout(string username)
+        public void Logout(string username)
         {
-            for (int i = 0; i < Users.Count; i++)
+            for (int i = 0; i < this.users.Count; i++)
             {
-                var currentUser = Users.ElementAt(i).Key;
+                var currentUser = this.users.ElementAt(i).Key;
                 if (currentUser.Username == username)
                 {
-                    if (!Users.ElementAt(i).Value)
+                    if (!this.users.ElementAt(i).Value)
                     {
                         throw new Exception("This user is already logged out!");
                     }
 
-                    Users[currentUser] = false;
+                    this.users[currentUser] = false;
                     return;
                 }
             }
 
             throw new MissingMemberException("This user is not logged!");
+        }
+
+        private void GetDbUsers()
+        {
+            this.users = new Dictionary<User, bool>();
+            var data = DbAccess.GetData(@"..\..\..\Users.mdb", "SELECT * FROM Users");
+            foreach (var user in data)
+            {
+                var username = user[1].ToString();
+                var password = user[2].ToString();
+                var sex = user[3].ToString() == "male" ? Sex.Male : Sex.Female;
+                var age = int.Parse(user[4].ToString());
+                var height = int.Parse(user[4].ToString());
+                var weight = int.Parse(user[5].ToString());
+
+                this.users.Add(new User(username, password, sex, age, height, weight), false);
+            }
+        }
+
+        private void DbUpdate()
+        {
+            // TODO:
+
+            // Get some data from DB
+            // var data = DbAccess.GetData(@"..\..\..\Users.mdb", "SELECT * FROM Users WHERE username='admin' AND password='admin'");
+
+            // Insert, delete or update some data in DB
+            // DbAccess.ManipulateData(@"..\..\..\Users.mdb", "INSERT INTO Users values(22,'katya','12345')");        
         }
     }
 }

@@ -14,7 +14,15 @@
         {
             this.Username = username;
             this.Password = password;
-            this.UserRegimen = null;
+        }
+
+        public User(string username, string password, Sex sex, int age, int height, int weight)
+            : this(username, password)
+        {
+            this.Sex = sex;
+            this.Age = age;
+            this.Height = height;
+            this.Weight = weight;
         }
 
         public string Username
@@ -51,8 +59,14 @@
             }
         }
 
-        public IRegimen UserRegimen { get; set; }
+        public Sex Sex { get; set; }
 
-        public string AvatarPath { get; set; }
+        public int Age { get; set; }
+
+        public int Height { get; set; }
+
+        public int Weight { get; set; }
+
+        public IRegimen Regimen { get; set; }
     }
 }

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEB36650-4831-4B0B-9334-6855FAA488CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fitness.Models</RootNamespace>
+    <AssemblyName>Fitness.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Diets\DietTypeEnum.cs" />
+<<<<<<< HEAD
+    <Compile Include="Diets\Sex.cs" />
+=======
+    <Compile Include="Sex.cs" />
+    <Compile Include="Diets\TypeMotionEnum.cs" />
+>>>>>>> 711cabda06017369ef7b0c1b0a9bc015228a1ea6
+    <Compile Include="Exercises\Exercise.cs" />
+    <Compile Include="Exercises\ExerciseType.cs" />
+    <Compile Include="Exercises\LowerBodyExercise.cs" />
+    <Compile Include="Exercises\MuscleGroup.cs" />
+    <Compile Include="Diets\WeightLossDiet.cs" />
+    <Compile Include="Diets\Diet.cs" />
+    <Compile Include="Diets\RookieDiet.cs" />
+    <Compile Include="Diets\StrengthDiet.cs" />
+    <Compile Include="Exercises\UpperBodyExercise.cs" />
+    <Compile Include="Interfaces\IExercise.cs" />
+    <Compile Include="Interfaces\ITrainingFactory.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Interfaces\ITrainingProgram.cs" />
+    <Compile Include="Interfaces\IRegimen.cs" />
+    <Compile Include="Interfaces\IDiet.cs" />
+    <Compile Include="TrainingPrograms\Intensity.cs" />
+    <Compile Include="TrainingPrograms\ProgramType.cs" />
+    <Compile Include="TrainingPrograms\RookieTraining.cs" />
+    <Compile Include="TrainingPrograms\StrengthTraining.cs" />
+    <Compile Include="TrainingPrograms\TrainingDay.cs" />
+    <Compile Include="TrainingPrograms\TrainingProgram.cs" />
+    <Compile Include="TrainingPrograms\WeightLossTraining.cs" />
+    <Compile Include="UserRegimens\Regimen.cs" />
+    <Compile Include="UserRegimens\WeightLoss.cs" />
+    <Compile Include="UserRegimens\Rookie.cs" />
+    <Compile Include="UserRegimens\Strength.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

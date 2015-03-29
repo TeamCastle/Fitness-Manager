@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Diets\DietTypeEnum.cs" />
     <Compile Include="Sex.cs" />
-    <Compile Include="Diets\TypeMotionEnum.cs" />
     <Compile Include="Exercises\Exercise.cs" />
     <Compile Include="Exercises\ExerciseType.cs" />
     <Compile Include="Exercises\LowerBodyExercise.cs" />

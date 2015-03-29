@@ -88,12 +88,8 @@
 
                         // Start the app
                         case ConsoleKey.S:
-
                             // TODO: Get the diet and training program
                             throw new NotImplementedException("\nNot Implemented!");
-
-                            break;
-
                         default:
                             break;
                     }

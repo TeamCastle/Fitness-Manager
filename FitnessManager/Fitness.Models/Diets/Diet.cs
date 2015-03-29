@@ -16,7 +16,7 @@
         /// To delete motion
         /// </summary>
         
-        public int duration;
+        public int duration=30;
         private double motion;
 
        public Diet(double kilos1,double height1,int age1, Sex sex1)
@@ -93,20 +93,7 @@
 
         public virtual TypeDiet TypeOfDiet { get; set; }
 
-        public virtual double CaloriesCalculation()
-        {
-            double firstStepCalculation = 0;
-            if (this.Sex == Sex.Male)
-            {
-                 firstStepCalculation = (66 + 13.7 * this.Kilos + 5 * this.HeightInCentimeters - 6.8 * this.Age)*this.Motion-200;
-            }
-            else
-            {
-                 firstStepCalculation = (66 + 9.6 * this.Kilos + 1.8 * this.HeightInCentimeters - 4.7 * this.Age)*this.Motion-100;
-            }
-            return firstStepCalculation;
-           
-        }
+        public abstract double CaloriesCalculation();
 
         public  void ShowDietCalculation()
         {

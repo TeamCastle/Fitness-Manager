@@ -43,11 +43,11 @@ namespace Fitness.Models.Diets
             double firstStepCalculation = 0;
             if (this.Sex == Sex.Male)
             {
-               firstStepCalculation = (66 + 13.7 * this.Kilos + 5 * this.HeightInCentimeters - 6.8 * this.Age)* this.Motion + this.WeightPlus / this.duration * 1000;
+               firstStepCalculation = (66 + 13.7 * this.Kilos + 5 * this.HeightInCentimeters - 6.8 * this.Age)* 1.2 +(this.WeightPlus / this.duration) * 10000;
             }
             else
             {
-                firstStepCalculation = (66 + 9.6 * this.Kilos + 1.8 * this.HeightInCentimeters - 4.7 * this.Age)* this.Motion + this.WeightPlus / this.duration * 1000;
+                firstStepCalculation = (66 + 9.6 * this.Kilos + 1.8 * this.HeightInCentimeters - 4.7 * this.Age)* 1.2 + (this.WeightPlus / this.duration) * 10000;
             }
             return firstStepCalculation;
 

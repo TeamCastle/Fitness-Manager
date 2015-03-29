@@ -15,7 +15,7 @@ namespace Fitness.Models.Diets
            this.WeightPlus = differenceInWeight1;
         }
         protected virtual TypeDiet typeOfDiet { get; private set; }
-        public int WeightPlus
+        private int WeightPlus
         {
             get 
             {
@@ -30,27 +30,28 @@ namespace Fitness.Models.Diets
                 this.weightPlus = value;
             }
         }
-        public override TypeDiet TypeOfDiet
+        protected override TypeDiet TypeOfDiet
         {
             get
             {
                 return TypeDiet.StrengthDiet;
             }
         }
-
-        public override double CaloriesCalculation()
+        public override double ShowDietCalculation()
         {
-            double firstStepCalculation = 0;
+             double firstStepCalculation = 0;
             if (this.Sex == Sex.Male)
             {
-               firstStepCalculation = (66 + 13.7 * this.Kilos + 5 * this.HeightInCentimeters - 6.8 * this.Age)* 1.2 +(this.WeightPlus / this.duration) * 10000;
+               firstStepCalculation = (66 + 13.7 * this.Kilos + 5 * this.HeightInCentimeters - 6.8 * this.Age)* 1.2 +(this.WeightPlus / this.duration) * 100;
             }
             else
             {
-                firstStepCalculation = (66 + 9.6 * this.Kilos + 1.8 * this.HeightInCentimeters - 4.7 * this.Age)* 1.2 + (this.WeightPlus / this.duration) * 10000;
+                firstStepCalculation = (66 + 9.6 * this.Kilos + 1.8 * this.HeightInCentimeters - 4.7 * this.Age)* 1.2 +(this.weightPlus/this.duration)*100;
             }
+           
             return firstStepCalculation;
-
         }
+        
+        
     }
 }

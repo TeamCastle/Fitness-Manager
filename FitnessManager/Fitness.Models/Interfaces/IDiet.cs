@@ -2,6 +2,6 @@
 {
     public interface IDiet
     {
-        void ShowDietCalculation(); 
+        double ShowDietCalculation(); 
     }
 }

@@ -16,7 +16,7 @@
         /// To delete motion
         /// </summary>
         
-        public int duration=30;
+        public int duration=10;
         private double motion;
 
        public Diet(double kilos1,double height1,int age1, Sex sex1)
@@ -34,14 +34,14 @@
            this.Sex = sex1;
        }
 
-        public double Kilos
+        protected double Kilos
         {
             get 
             {
                 return this.kilos;
             }
 
-            protected set
+            set
             { 
                 if(value<=0)
                 {
@@ -51,14 +51,14 @@
             }
         }
 
-        public double HeightInCentimeters
+        protected double HeightInCentimeters
         {
             get 
             {
                 return this.heightInCentimeters;
             }
 
-            protected set
+            set
             { 
                 if(value<=0)
                 {
@@ -68,14 +68,14 @@
             }
         }
 
-        public int Age
+        protected int Age
         {
             get
             {
                 return this.age;
             }
 
-            protected set
+            set
             {
                 if (value <= 0)
                 {
@@ -87,18 +87,26 @@
         }
 
     
-        public double Motion { get; private set; }
+        protected double Motion { get; set; }
 
-        public Sex Sex { get;protected set; }
+        protected Sex Sex { get;set; }
 
-        public virtual TypeDiet TypeOfDiet { get; set; }
+        protected virtual TypeDiet TypeOfDiet { get; set; }
 
-        public abstract double CaloriesCalculation();
 
-        public  void ShowDietCalculation()
+        public virtual double ShowDietCalculation()
         {
-            Console.WriteLine("Still nothing");
-
+            double firstStepCalculation = 0;
+            if (this.Sex == Sex.Male)
+            {
+                firstStepCalculation = (66 + 13.7 * this.Kilos + 5 * this.HeightInCentimeters - 6.8 * this.Age) * 1.2 - 200;
+            }
+            else
+            {
+                firstStepCalculation = (66 + 9.6 * this.Kilos + 1.8 * this.HeightInCentimeters - 4.7 * this.Age) * 1.2- 100;
+            }
+            return firstStepCalculation;
+   
         }
     }
 }

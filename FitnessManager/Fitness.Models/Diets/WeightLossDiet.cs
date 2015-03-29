@@ -13,7 +13,7 @@ namespace Fitness.Models.Diets
            this.Sex = sex1;
            this.WeightMinus = differenceInWeight1;
         }
-        public override TypeDiet TypeOfDiet
+        protected override TypeDiet TypeOfDiet
         {
             get
             {
@@ -21,7 +21,7 @@ namespace Fitness.Models.Diets
             }
         }
        
-        public int WeightMinus
+        private int WeightMinus
         {
             get
             {
@@ -36,18 +36,20 @@ namespace Fitness.Models.Diets
                 this.weightMinus = value;
             }
         }
-        public override double CaloriesCalculation()
+        public override double ShowDietCalculation()
+
         {
             double firstStepCalculation = 0;
             if (this.Sex == Sex.Male)
             {
-                firstStepCalculation = (66 + 13.7 * this.Kilos + 5 * this.HeightInCentimeters - 6.8 * this.Age)* 1.2 + (this.WeightMinus / this.duration) * 10000;
+                firstStepCalculation = (66 + 13.7 * this.Kilos + 5 * this.HeightInCentimeters - 6.8 * this.Age)* 1.2 + (this.WeightMinus / this.duration) * 100;
             }
             else
             {
-                firstStepCalculation = (66 + 9.6 * this.Kilos + 1.8 * this.HeightInCentimeters - 4.7 * this.Age)*1.2 + (this.WeightMinus / this.duration)*10000;
+                firstStepCalculation = (66 + 9.6 * this.Kilos + 1.8 * this.HeightInCentimeters - 4.7 * this.Age)*1.2 + (this.weightMinus / this.duration)*100;
             }
             return firstStepCalculation;
+          
 
         }
     }

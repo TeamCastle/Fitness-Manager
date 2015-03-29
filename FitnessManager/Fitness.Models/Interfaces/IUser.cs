@@ -9,6 +9,6 @@
 
         string Password { get; set; }
 
-        IRegimen UserRegimen { get; set; }
+        IRegimen Regimen { get; set; }
     }
 }

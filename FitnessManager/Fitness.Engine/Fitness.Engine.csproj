@@ -42,6 +42,7 @@
     <Compile Include="Exceptions\InvalidTrainingException.cs" />
     <Compile Include="Factories\TrainingFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fitness.Models\Fitness.Models.csproj">

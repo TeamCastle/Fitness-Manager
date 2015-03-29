@@ -4,6 +4,7 @@
     {
         ThreeDays,
         FourDays,
-        FiveDays
+        FiveDays,
+        SixDays
     }
 }

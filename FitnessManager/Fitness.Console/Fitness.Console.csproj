@@ -48,6 +48,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fitness.Engine\Fitness.Engine.csproj">
+      <Project>{01b6c8e5-45e0-4e58-9cc6-d78940a83142}</Project>
+      <Name>Fitness.Engine</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fitness.Models\Fitness.Models.csproj">
       <Project>{feb36650-4831-4b0b-9334-6855faa488cf}</Project>
       <Name>Fitness.Models</Name>

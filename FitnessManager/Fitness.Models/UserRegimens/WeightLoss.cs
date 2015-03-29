@@ -7,8 +7,8 @@
     /// </summary>
     public class WeightLoss : Regimen
     {
-        public WeightLoss(string name, ITrainingProgram trainingProgram, IDiet diet)
-            :base(name, trainingProgram, diet)
+        public WeightLoss(string name, ITrainingProgram trainingProgram, IDiet diet, int duration)
+            : base(name, trainingProgram, diet, duration)
         {
 
         }

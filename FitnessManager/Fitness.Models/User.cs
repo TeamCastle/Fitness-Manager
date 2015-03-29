@@ -14,7 +14,15 @@
         {
             this.Username = username;
             this.Password = password;
-            this.UserRegimen = null;
+        }
+
+        public User(string username, string password, Sex sex, int age, int height, int weight)
+            : this(username, password)
+        {
+            this.Sex = sex;
+            this.Age = age;
+            this.Height = height;
+            this.Weight = weight;
         }
 
         public string Username
@@ -25,12 +33,12 @@
             }
             set
             {
-                if (Regex.IsMatch(value, @"[a-zA-Z0-9]"))
+                if (!Regex.IsMatch(value, @"[a-zA-Z0-9]"))
                 {
-                    this.username = value;
+                    throw new ArgumentException("Invalid Username!");
                 }
 
-                throw new ArgumentException("Invalid Username!");
+                this.username = value;
             }
         }
 
@@ -42,17 +50,23 @@
             }
             set
             {
-                if (value.Length >= 5 && value.Length <= 20)
+                if (value.Length < 5 || value.Length > 20)
                 {
-                    this.password = value;
+                    throw new ArgumentException("Invalid Password!");
                 }
 
-                throw new ArgumentException("Invalid Password!");
+                this.password = value;
             }
         }
 
-        public IRegimen UserRegimen { get; set; }
+        public Sex Sex { get; set; }
 
-        public string AvatarPath { get; set; }
+        public int Age { get; set; }
+
+        public int Height { get; set; }
+
+        public int Weight { get; set; }
+
+        public IRegimen Regimen { get; set; }
     }
 }

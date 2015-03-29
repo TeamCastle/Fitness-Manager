@@ -50,7 +50,7 @@
             }
             set
             {
-                if (value.Length < 5 && value.Length > 20)
+                if (value.Length < 5 || value.Length > 20)
                 {
                     throw new ArgumentException("Invalid Password!");
                 }

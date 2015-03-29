@@ -1,6 +1,7 @@
 ﻿namespace Fitness.Models.TrainingPrograms
 {
     using System;
+
     using Fitness.Models.Interfaces;
 
     public abstract class TrainingProgram : ITrainingProgram

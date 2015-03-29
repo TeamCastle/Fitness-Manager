@@ -2,11 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using Fitness.Engine;
+    using Fitness.Engine.Access;
     using Fitness.Models;
 
     public class FitnessManager
@@ -16,10 +14,7 @@
 
         public static void Main()
         {
-            // Temporary users
-            UserManager.Users = new Dictionary<User, bool>();
-            UserManager.Users.Add(new User("Ivan", "12345", Sex.Male, 25, 178, 75), false);
-            UserManager.Users.Add(new User("Maria", "67890", Sex.Female, 22, 172, 55), false);
+            var userManager = new UserManager();
 
             while (true)
             {
@@ -61,7 +56,7 @@
                             var height = int.Parse(Console.ReadLine());   // in cm
                             Console.Write("Weight, [kg]: ");
                             var weight = int.Parse(Console.ReadLine());   // in kg
-                            UserManager.Register(new User(username, password, sex, age, height, weight));
+                            userManager.Register(new User(username, password, sex, age, height, weight));
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Registered");
                             break;
@@ -72,7 +67,7 @@
                             username = Console.ReadLine();
                             Console.Write("Password: ");
                             password = Console.ReadLine();
-                            UserManager.Login(username, password);
+                            userManager.Login(username, password);
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Logged in");
                             break;
@@ -81,15 +76,19 @@
                         case ConsoleKey.Q:
                             Console.Write("\nUsername: ");
                             username = Console.ReadLine();
-                            UserManager.Logout(username);
+                            userManager.Logout(username);
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Logged out");
                             break;
 
                         // Start the app
                         case ConsoleKey.S:
+
                             // TODO: Get the diet and training program
                             throw new NotImplementedException("\nNot Implemented!");
+
+                            break;
+
                         default:
                             break;
                     }

@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Access\DbAccess.cs" />
+    <Compile Include="Access\FileAccess.cs" />
     <Compile Include="Exceptions\InvalidTrainingException.cs" />
     <Compile Include="Factories\TrainingFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -39,14 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Access\DbAccess.cs" />
-    <Compile Include="Access\FileAccess.cs" />
     <Compile Include="Exceptions\InvalidTrainingException.cs" />
     <Compile Include="Factories\TrainingFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fitness.Data\Fitness.Data.csproj">
+      <Project>{7aa42036-d274-4281-b46d-229d13ca703a}</Project>
+      <Name>Fitness.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fitness.Models\Fitness.Models.csproj">
       <Project>{feb36650-4831-4b0b-9334-6855faa488cf}</Project>
       <Name>Fitness.Models</Name>

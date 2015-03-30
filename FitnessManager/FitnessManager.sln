@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Console", "Fitness.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Engine", "Fitness.Engine\Fitness.Engine.csproj", "{01B6C8E5-45E0-4E58-9CC6-D78940A83142}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Data", "Fitness.Data\Fitness.Data.csproj", "{7AA42036-D274-4281-B46D-229D13CA703A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.WPF", "Fitness.WPF\Fitness.WPF.csproj", "{A2ADDC3F-26BD-433E-820C-BAE4F95C2A93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{01B6C8E5-45E0-4E58-9CC6-D78940A83142}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01B6C8E5-45E0-4E58-9CC6-D78940A83142}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01B6C8E5-45E0-4E58-9CC6-D78940A83142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA42036-D274-4281-B46D-229D13CA703A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA42036-D274-4281-B46D-229D13CA703A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA42036-D274-4281-B46D-229D13CA703A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA42036-D274-4281-B46D-229D13CA703A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2ADDC3F-26BD-433E-820C-BAE4F95C2A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2ADDC3F-26BD-433E-820C-BAE4F95C2A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2ADDC3F-26BD-433E-820C-BAE4F95C2A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2ADDC3F-26BD-433E-820C-BAE4F95C2A93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

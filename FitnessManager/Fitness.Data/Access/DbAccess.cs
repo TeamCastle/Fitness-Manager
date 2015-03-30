@@ -1,4 +1,4 @@
-﻿namespace Fitness.Engine.Access
+﻿namespace Fitness.Data.Access
 {
     using System.Collections.Generic;
     using System.Data.OleDb;

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{54FB0288-06AD-4C37-97EC-4978DDB47133}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{7AA42036-D274-4281-B46D-229D13CA703A}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fitness.Console</RootNamespace>
-    <AssemblyName>Fitness.Console</AssemblyName>
+    <RootNamespace>Fitness.Data</RootNamespace>
+    <AssemblyName>Fitness.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>Libs\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>Libs\Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,26 +45,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FitnessConsole.cs" />
+    <Compile Include="Access\DbAccess.cs" />
+    <Compile Include="Access\FileAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DietsRepositories\DietsFromDbRepository.cs" />
+    <Compile Include="Repositories\UsersRepositories\AbstractUsersRepository.cs" />
+    <Compile Include="Repositories\UsersRepositories\UsersFromDbRepository.cs" />
+    <Compile Include="Interfaces\IUsersRepository.cs" />
+    <Compile Include="Repositories\UsersRepositories\UsersFromFileRepository.cs" />
+    <Compile Include="Repositories\UsersRepositories\UsersFromRepository.cs" />
+    <Compile Include="Repositories\UsersRepositories\UsersFromStaticListRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Fitness.Data\Fitness.Data.csproj">
-      <Project>{7aa42036-d274-4281-b46d-229d13ca703a}</Project>
-      <Name>Fitness.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Fitness.Engine\Fitness.Engine.csproj">
-      <Project>{01b6c8e5-45e0-4e58-9cc6-d78940a83142}</Project>
-      <Name>Fitness.Engine</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Fitness.Models\Fitness.Models.csproj">
       <Project>{feb36650-4831-4b0b-9334-6855faa488cf}</Project>
       <Name>Fitness.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Users.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\ClosedXML.dll" />
+    <Content Include="Libs\Excel.dll" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

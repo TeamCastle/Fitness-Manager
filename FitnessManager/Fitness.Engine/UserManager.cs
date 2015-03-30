@@ -4,14 +4,19 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Fitness.Engine.Access;
+    using Fitness.Data.Access;
     using Fitness.Models;
 
     public class UserManager
     {
-        // Collection from Users and their login states ('true' for logged)
+        /// <summary>
+        /// Collection from Users and their login states ('true' for logged)
+        /// </summary>
         private Dictionary<User, bool> users;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserManager" /> class.
+        /// </summary>
         public UserManager()
         {
             this.GetDbUsers();
@@ -87,7 +92,7 @@
         private void GetDbUsers()
         {
             this.users = new Dictionary<User, bool>();
-            var data = DbAccess.GetData(@"..\..\..\Users.mdb", "SELECT * FROM Users");
+            var data = DbAccess.GetData(@"..\..\..\Fitness.Data\Database\Users.mdb", "SELECT * FROM Users");
             foreach (var user in data)
             {
                 var username = user[1].ToString();
@@ -106,10 +111,10 @@
             // TODO:
 
             // Get some data from DB
-            // var data = DbAccess.GetData(@"..\..\..\Users.mdb", "SELECT * FROM Users WHERE username='admin' AND password='admin'");
+            // var data = DbAccess.GetData(@"..\..\..\Fitness.Data\Database\Users.mdb", "SELECT * FROM Users WHERE username='admin' AND password='admin'");
 
             // Insert, delete or update some data in DB
-            // DbAccess.ManipulateData(@"..\..\..\Users.mdb", "INSERT INTO Users values(22,'katya','12345')");        
+            // DbAccess.ManipulateData(@"..\..\..\Fitness.Data\Database\Users.mdb", "INSERT INTO Users values(22,'katya','12345')");        
         }
     }
 }

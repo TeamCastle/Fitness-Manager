@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
 
+    using Fitness.Data.Access;
     using Fitness.Engine;
-    using Fitness.Engine.Access;
     using Fitness.Models;
 
     public class FitnessManager
@@ -15,7 +15,7 @@
         public static void Main()
         {
             var userManager = new UserManager();
-
+            
             while (true)
             {
                 try

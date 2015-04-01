@@ -18,7 +18,7 @@
         /// <summary>
         /// Users from file repository
         /// </summary>
-        private UsersFromFileRepository usersFromFile;
+        private UsersFromExcelRepository usersFromExcel;
 
         /// <summary>
         /// Users from static list repository
@@ -29,12 +29,12 @@
         /// Initializes a new instance of the <see cref="UsersFromRepository"/> class.
         /// </summary>
         /// <param name="usersFromDb">Users from database repository</param>
-        /// <param name="usersFromFile">Users from file repository</param>
+        /// <param name="usersFromExcel">Users from file repository</param>
         /// <param name="usersFromStaticList">Users from static list repository</param>
-        public UsersFromRepository(UsersFromDbRepository usersFromDb, UsersFromFileRepository usersFromFile, UsersFromStaticListRepository usersFromStaticList)
+        public UsersFromRepository(UsersFromDbRepository usersFromDb, UsersFromExcelRepository usersFromExcel, UsersFromStaticListRepository usersFromStaticList)
         {
             this.usersFromDb = usersFromDb;
-            this.usersFromFile = usersFromFile;
+            this.usersFromExcel = usersFromExcel;
             this.usersFromStaticList = usersFromStaticList;
             this.Users = this.ReadUsers();
         }
@@ -45,8 +45,8 @@
         /// <returns>Returns a collection of users</returns>
         public override IList<User> ReadUsers()
         {
-            this.usersFromDb.SetSuccessor(this.usersFromFile);
-            this.usersFromFile.SetSuccessor(this.usersFromStaticList);
+            this.usersFromDb.SetSuccessor(this.usersFromExcel);
+            this.usersFromExcel.SetSuccessor(this.usersFromStaticList);
 
             return this.usersFromDb.ReadUsers();
         }

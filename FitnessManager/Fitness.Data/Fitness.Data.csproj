@@ -52,10 +52,11 @@
     <Compile Include="Access\FileAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DietsRepositories\DietsFromDbRepository.cs" />
+    <Compile Include="Repositories\RepositoryType.cs" />
     <Compile Include="Repositories\UsersRepositories\AbstractUsersRepository.cs" />
     <Compile Include="Repositories\UsersRepositories\UsersFromDbRepository.cs" />
     <Compile Include="Interfaces\IUsersRepository.cs" />
-    <Compile Include="Repositories\UsersRepositories\UsersFromFileRepository.cs" />
+    <Compile Include="Repositories\UsersRepositories\UsersFromExcelRepository.cs" />
     <Compile Include="Repositories\UsersRepositories\UsersFromRepository.cs" />
     <Compile Include="Repositories\UsersRepositories\UsersFromStaticListRepository.cs" />
   </ItemGroup>

@@ -9,7 +9,7 @@
     <Grid>
         <Image Grid.ColumnSpan="3" Source="/Images/registration.jpg" Opacity="0.7" Margin="0,0,-0.4,-0.2" Grid.RowSpan="2"/>
         <Label Content="Username:" Foreground="White" Margin="0,25,440,246" HorizontalAlignment="Right" Width="113"/>
-        <TextBox x:Name="BoxName" Margin="123,26,290.2,246" Opacity="0.8" TextChanged="BoxName_TextChanged"/>
+        <TextBox x:Name="BoxName" Margin="123,26,290.2,246" Opacity="0.8"/>
         <Label Content="Password:" Foreground="White" Margin="0,88,441,181" HorizontalAlignment="Right" Width="105"/>
         <PasswordBox x:Name="BoxPassword" Margin="123,88,290.2,184" Opacity="0.8" />
         <Label Content="Height:" Foreground="White" Margin="0,26,178,246" HorizontalAlignment="Right" Width="80"/>

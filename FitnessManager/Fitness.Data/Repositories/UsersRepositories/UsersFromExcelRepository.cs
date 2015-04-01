@@ -9,7 +9,7 @@
     /// <summary>
     /// The 'ConcreteHandler' class. Gets the collection of users from text file
     /// </summary>
-    public class UsersFromFileRepository : AbstractUsersRepository
+    public class UsersFromExcelRepository : AbstractUsersRepository
     {
         /// <summary>
         /// Path to text file that contains the users

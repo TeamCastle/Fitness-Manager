@@ -22,23 +22,23 @@
         }
 
         /// <summary>
-        /// Gets or sets the successor for some users repository class
+        /// Gets or sets the successor for some users repository class.
         /// </summary>
         protected AbstractUsersRepository Successor { get; set; }
 
         /// <summary>
-        /// Sets a successor for some users repository class
+        /// Sets a successor for some users repository class.
         /// </summary>
-        /// <param name="successor">The successor</param>
+        /// <param name="successor">The successor.</param>
         public void SetSuccessor(AbstractUsersRepository successor)
         {
             this.Successor = successor;
         }
 
         /// <summary>
-        /// Abstract method which reads a list of users from some repository
+        /// Abstract method which reads a list of users from some repository.
         /// </summary>
-        /// <returns>Returns a collection of users</returns>
+        /// <returns>Returns a collection of users.</returns>
         public abstract IList<User> ReadUsers();
     }
 }

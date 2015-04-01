@@ -8,7 +8,7 @@
     <Grid Margin="0,0,70,0">
         <Image Source="/Images/login.jpg" Margin="0,0,-69.8,0.2" Opacity="0.7"/>
         <Label Content="Username:" Foreground="White" Margin="0,82,135.2,143.2" HorizontalAlignment="Right" Width="113"/>
-        <TextBox x:Name="BoxName" Margin="197,85,-33.8,148.2" Opacity="0.8" TextChanged="BoxName_TextChanged"/>
+        <TextBox x:Name="BoxName" Margin="197,85,-33.8,148.2" Opacity="0.8"/>
         <Label Content="Password:" Foreground="White" Margin="0,136,139.2,87.2" HorizontalAlignment="Right" Width="105"/>
         <PasswordBox x:Name="BoxPassword" Margin="197,139,-35.8,94.2" Opacity="0.8" />
         <Button x:Name="LoginButton" Content="Login" IsDefault="True" Click="LoginButtonClick" Margin="127,198,68.2,31.2" />

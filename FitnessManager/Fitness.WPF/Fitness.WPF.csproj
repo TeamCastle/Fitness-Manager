@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FitnessManagerWpf.cs" />
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
@@ -113,6 +114,12 @@
   <ItemGroup>
     <Resource Include="Images\registration.jpg" />
     <Resource Include="Images\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fitness.Engine\Fitness.Engine.csproj">
+      <Project>{01b6c8e5-45e0-4e58-9cc6-d78940a83142}</Project>
+      <Name>Fitness.Engine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

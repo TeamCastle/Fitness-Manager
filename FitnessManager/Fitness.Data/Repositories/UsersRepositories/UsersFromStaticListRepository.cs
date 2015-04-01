@@ -14,9 +14,8 @@
         /// </summary>
         private readonly IList<User> staticListUsers = new List<User>()
         {
-            new User(null, null),
-            new User(null, null),
-            new User(null, null)
+            new User("Ivan", "12345", Sex.Male, 24, 188, 80),
+            new User("Maria", "67890", Sex.Female, 22, 173, 58)
         };
 
         /// <summary>

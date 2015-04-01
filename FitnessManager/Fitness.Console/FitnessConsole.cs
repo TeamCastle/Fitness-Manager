@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Data;
 
     using Fitness.Data.Access;
     using Fitness.Engine;
@@ -15,7 +16,7 @@
         public static void Main()
         {
             var userManager = new UserManager();
-            
+
             while (true)
             {
                 try
@@ -41,15 +42,20 @@
                             {
                                 throw new Exception("\nWrong input!");
                             }
+
                             var sex = Sex.Male;
                             switch (sexKey.Key)
                             {
                                 case ConsoleKey.M:
-                                    sex = Sex.Male; break;
+                                    sex = Sex.Male;
+                                    break;
                                 case ConsoleKey.F:
-                                    sex = Sex.Female; break;
-                                default: break;
+                                    sex = Sex.Female;
+                                    break;
+                                default:
+                                    break;
                             }
+
                             Console.Write("\nAge: ");
                             var age = int.Parse(Console.ReadLine());
                             Console.Write("Height, [cm]: ");
@@ -102,6 +108,26 @@
                     Console.ResetColor();
                 }
             }
+        }
+
+        /// Temporary
+        private void ExportDietAsPdf()
+        {
+            //Datatable example
+            var dataTable = new DataTable("TableName");
+            dataTable.Columns.Add(new DataColumn("ID", typeof(Int32)));
+            dataTable.Columns.Add(new DataColumn("Name", typeof(string)));
+            DataRow dataRow;
+            for (int i = 0; i < 5; i++)
+            {
+                dataRow = dataTable.NewRow();
+                dataRow["ID"] = i;
+                dataRow["Name"] = "Some Text " + i.ToString();
+                dataTable.Rows.Add(dataRow);
+            }
+            dataTable.AcceptChanges();
+
+            FileAccess.WritePdf("Diet", dataTable, @"...");
         }
     }
 }

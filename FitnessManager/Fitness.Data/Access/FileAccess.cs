@@ -8,6 +8,9 @@
 
     using ClosedXML.Excel;
     using Excel;
+    using iTextSharp.text;
+    using iTextSharp.text.pdf;
+    using iTextSharp.text.pdf.parser;
 
     /// <summary>
     /// Helper class for working with Excel, PDF and Text files.
@@ -45,11 +48,13 @@
         {
             var fullPath = Path.GetFullPath(filePath);
             var stream = File.Open(fullPath, FileMode.Open);
-            var excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-            excelReader.IsFirstRowAsColumnNames = true;
             var dataTable = new DataTable();
-            dataTable = excelReader.AsDataSet().Tables[sheetName];
-            excelReader.Close();
+            using (var excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream))
+            {
+                excelReader.IsFirstRowAsColumnNames = true;
+                dataTable = excelReader.AsDataSet().Tables[sheetName];
+            }
+
             return dataTable;
         }
 
@@ -60,8 +65,16 @@
         /// <returns>Returns a list of strings.</returns>
         public static List<string> ReadPdf(string filePath)
         {
-            // TODO:
-            throw new NotImplementedException();
+            var result = new List<string>();
+            using (var reader = new PdfReader(filePath))
+            {
+                for (int page = 1; page <= reader.NumberOfPages; page++)
+                {
+                    result.Add(PdfTextExtractor.GetTextFromPage(reader, page));
+                }
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -88,7 +101,7 @@
         {
             using (var writer = new StreamWriter(filePath, append, Encoding.GetEncoding("windows-1251")))
             {
-                foreach (var line in list) writer.WriteLine(line);
+                list.ForEach(line => writer.WriteLine(line));
             }
         }
 
@@ -104,15 +117,56 @@
             workbook.Worksheets.Add(dataTable, sheetName);
             workbook.SaveAs(filePath);
         }
+
         /// <summary>
         /// Writes some list of strings in an PDF file.
         /// </summary>
         /// <param name="text">The list of strings.</param>
         /// <param name="filePath">The path where will be saved the PDF file.</param>
-        public static void WritePdf(List<string> text, string filePath)
+        public static void WritePdf(List<string> list, string filePath)
         {
-            // TODO:
-            throw new NotImplementedException();
+            var document = new Document();
+            using (var streamer = new FileStream(filePath, FileMode.Create, System.IO.FileAccess.Write, FileShare.None))
+            {
+                using (var writer = PdfWriter.GetInstance(document, streamer))
+                {
+                    document.Open();
+                    list.ForEach(line => document.Add(new Paragraph(line)));
+                    document.Close();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Writes some data table in an PDF file.
+        /// </summary>
+        /// <param name="title">The title of the document.</param>
+        /// <param name="dataTable">The data table.</param>
+        /// <param name="filePath">The path where will be saved the PDF file.</param>
+        public static void WritePdf(string title, DataTable dataTable, string filePath)
+        {
+            var document = new Document(PageSize.LETTER, 10, 10, 40, 40);
+            using (var writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create)))
+            {
+                document.Open();
+                var paragraph = new Paragraph(title);
+                paragraph.Alignment = Element.ALIGN_CENTER;
+
+                var table = new PdfPTable(dataTable.Columns.Count);
+                table.SpacingBefore = 15;
+                for (int rows = -1; rows < dataTable.Rows.Count; rows++)
+                {
+                    for (int column = 0; column < dataTable.Columns.Count; column++)
+                    {
+                        var content = rows < 0 ? dataTable.Columns[column].ColumnName : dataTable.Rows[rows][column].ToString();
+                        table.AddCell(new PdfPCell(new Phrase(new Chunk(content, FontFactory.GetFont("Arial", 7)))));
+                    }
+                }
+
+                document.Add(paragraph);
+                document.Add(table);
+                document.Close();
+            }
         }
     }
 }

@@ -4,7 +4,7 @@
     using System.Data.OleDb;
 
     /// <summary>
-    /// Helper class for Database access.
+    /// Helper class for database file access.
     /// </summary>
     public static class DbAccess
     {
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// Insert, update or delete some database file data.
+        /// Insert, update or delete data from some database file.
         /// </summary>
         /// <param name="filePath">The path to the database file.</param>
         /// <param name="queryString">The query string.</param>

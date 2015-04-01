@@ -36,6 +36,9 @@
     <Reference Include="Excel">
       <HintPath>Libs\Excel.dll</HintPath>
     </Reference>
+    <Reference Include="iTextSharp">
+      <HintPath>Libs\iTextSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,8 +71,8 @@
     </Content>
     <Content Include="Libs\ClosedXML.dll" />
     <Content Include="Libs\Excel.dll" />
+    <Content Include="Libs\iTextSharp.dll" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -12,9 +12,9 @@
         <TextBox x:Name="BoxName" Margin="123,26,290.2,246" Opacity="0.8"/>
         <Label Content="Password:" Foreground="White" Margin="0,88,441,181" HorizontalAlignment="Right" Width="105"/>
         <PasswordBox x:Name="BoxPassword" Margin="123,88,290.2,184" Opacity="0.8" />
-        <Label Content="Height:" Foreground="White" Margin="0,26,178,246" HorizontalAlignment="Right" Width="80"/>
+        <Label Content="Height:" Foreground="White" Margin="0,26,178.2,236" HorizontalAlignment="Right" Width="83"/>
         <TextBox x:Name="BoxHeight" Margin="386,26,25.2,246" Opacity="0.8"/>
-        <Label Content="Weight:" Foreground="White" Margin="0,89,182,185" HorizontalAlignment="Right" Width="79"/>
+        <Label Content="Weight:" Foreground="White" Margin="0,89,182.2,168" HorizontalAlignment="Right" Width="79"/>
         <TextBox x:Name="BoxWeight" Margin="386,87,25.2,185" Opacity="0.8" />
         <Label Content="Age:" Foreground="White" Margin="0,150,440,119" HorizontalAlignment="Right" Width="60"/>
         <TextBox x:Name="BoxAge" Margin="123,153,290.2,119" Opacity="0.8"/>

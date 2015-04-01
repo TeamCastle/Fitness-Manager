@@ -1,15 +1,12 @@
 ﻿namespace Fitness.Data.Repositories.UsersRepositories
 {
-    using System;
     using System.Collections.Generic;
-    using System.Data.OleDb;
-    using System.IO;
 
-    using Fitness.Models;
     using Fitness.Data.Access;
+    using Fitness.Models;
 
     /// <summary>
-    /// The 'ConcreteHandler' class. Gets the collection of users from database
+    /// Gets the collection of users from database file.
     /// </summary>
     public class UsersFromDbRepository : AbstractUsersRepository
     {
@@ -24,29 +21,17 @@
         private const string QueryString = "SELECT * FROM Users";
 
         /// <summary>
-        /// Reads a users from external database repository
+        /// Reads a users from external database repository.
         /// </summary>
-        /// <returns>Returns a list of collection of users</returns>
+        /// <returns>Returns a list of collection of users.</returns>
         public override IList<User> ReadUsers()
         {
-            if (!File.Exists(DbFilePath))
+            if (!System.IO.File.Exists(DbFilePath))
             {
                 return this.Successor.ReadUsers();
             }
 
-            var usersCollection = new List<User>();
-            var data = DbAccess.GetData(DbFilePath, QueryString);
-            foreach (var user in data)
-            {
-                var username = user[1].ToString();
-                var password = user[2].ToString();
-                var sex = user[3].ToString() == "male" ? Sex.Male : Sex.Female;
-                var age = int.Parse(user[4].ToString());
-                var height = int.Parse(user[4].ToString());
-                var weight = int.Parse(user[5].ToString());
-
-                usersCollection.Add(new User(username, password, sex, age, height, weight));
-            }
+            var usersCollection = this.GetCollection(DbAccess.GetData(DbFilePath, QueryString));
 
             return usersCollection;
         }
@@ -59,7 +44,7 @@
             // var data = DbAccess.GetData(@"..\..\..\Fitness.Data\Database\Users.mdb", "SELECT * FROM Users WHERE username='admin' AND password='admin'");
 
             // Insert, delete or update some data in DB
-            // DbAccess.ManipulateData(@"..\..\..\Fitness.Data\Database\Users.mdb", "INSERT INTO Users values(22,'katya','12345')");        
+            // DbAccess.ManipulateData(@"..\..\..\Fitness.Data\Database\Users.mdb", "INSERT INTO Users values('katya','12345')");        
         }
     }
 }

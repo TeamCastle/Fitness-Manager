@@ -31,6 +31,7 @@
             {
                 return this.username;
             }
+
             set
             {
                 if (!Regex.IsMatch(value, @"[a-zA-Z0-9]"))
@@ -48,6 +49,7 @@
             {
                 return this.password;
             }
+
             set
             {
                 if (value.Length < 5 || value.Length > 20)

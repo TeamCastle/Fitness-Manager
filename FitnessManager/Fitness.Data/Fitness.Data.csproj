@@ -30,11 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClosedXML">
+    <Reference Include="ClosedXML, Version=0.75.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\ClosedXML.dll</HintPath>
     </Reference>
-    <Reference Include="Excel">
+    <Reference Include="Excel, Version=2.1.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Libs\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="iTextSharp">
       <HintPath>Libs\iTextSharp.dll</HintPath>
@@ -54,7 +59,9 @@
     <Compile Include="Repositories\DietsRepositories\DietsFromDbRepository.cs" />
     <Compile Include="Repositories\RepositoryType.cs" />
     <Compile Include="Repositories\UsersRepositories\AbstractUsersRepository.cs" />
-    <Compile Include="Repositories\UsersRepositories\UsersFromDbRepository.cs" />
+    <Compile Include="Repositories\UsersRepositories\UsersFromDbRepository.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="Interfaces\IUsersRepository.cs" />
     <Compile Include="Repositories\UsersRepositories\UsersFromExcelRepository.cs" />
     <Compile Include="Repositories\UsersRepositories\UsersFromRepository.cs" />
@@ -67,12 +74,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Users.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Libs\ClosedXML.dll" />
     <Content Include="Libs\Excel.dll" />
+    <Content Include="Libs\ICSharpCode.SharpZipLib.dll" />
     <Content Include="Libs\iTextSharp.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

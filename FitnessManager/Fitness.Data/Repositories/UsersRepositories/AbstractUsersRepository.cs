@@ -1,5 +1,6 @@
 ﻿namespace Fitness.Data.Repositories.UsersRepositories
 {
+    using System.Collections;
     using System.Collections.Generic;
 
     using Fitness.Data.Interfaces;
@@ -15,6 +16,7 @@
             {
                 return new List<User>(this.users);
             }
+
             set
             {
                 this.users = new HashSet<User>(value);
@@ -40,5 +42,23 @@
         /// </summary>
         /// <returns>Returns a collection of users.</returns>
         public abstract IList<User> ReadUsers();
+
+        protected List<User> GetCollection(IEnumerable data)
+        {
+            var usersCollection = new List<User>();
+            foreach (dynamic user in data)
+            {
+                var username = user[0].ToString();
+                var password = user[1].ToString();
+                var sex = user[2].ToString() == "male" ? Sex.Male : Sex.Female;
+                var age = int.Parse(user[3].ToString());
+                var height = int.Parse(user[4].ToString());
+                var weight = int.Parse(user[5].ToString());
+
+                usersCollection.Add(new User(username, password, sex, age, height, weight));
+            }
+
+            return usersCollection;
+        }
     }
 }

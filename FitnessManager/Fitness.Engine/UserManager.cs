@@ -13,6 +13,7 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="UserManager" /> class.
         /// </summary>
+        /// <param name="usersRepository">Some user repository.</param>
         public UserManager(IUsersRepository usersRepository)
         {
             this.GetUsers(usersRepository);
@@ -38,7 +39,7 @@
         }
 
         /// <summary>
-        /// Login ...
+        /// Login the user.
         /// </summary>
         /// <param name="user">The user.</param>
         public void Login(string username, string password)
@@ -67,7 +68,7 @@
         }
 
         /// <summary>
-        /// Logout ...
+        /// Logout the user.
         /// </summary>
         /// <param name="user">The user.</param>
         public void Logout(string username)

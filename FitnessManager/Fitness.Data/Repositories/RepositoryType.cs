@@ -4,7 +4,6 @@
     {
         Mdb,
         Excel,
-        Pdf,
         Static,
         Txt
     }

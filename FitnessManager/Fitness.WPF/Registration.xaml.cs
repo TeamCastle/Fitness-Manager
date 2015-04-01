@@ -21,12 +21,11 @@
     {
         public Registration()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void RegistrationButtonClick(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

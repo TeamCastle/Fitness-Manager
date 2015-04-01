@@ -1,6 +1,9 @@
-﻿
-
-namespace Fitness.Models.Diets
+﻿namespace Fitness.Models.Diets
 {
-    public enum TypeDiet {RookieDiet,StrengthDiet,WeightDiet}
+    public enum TypeDiet
+    {
+        RookieDiet,
+        StrengthDiet,
+        WeightDiet
+    }
 }

@@ -3,11 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    using Fitness.Data.Interfaces;
     using Fitness.Models;
-    using Fitness.Models.Diets;
-    using System.Data;
-    using Fitness.Data.Access;
     using Fitness.Models.UserRegimens;
 
     /// <summary>
@@ -22,7 +18,7 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="FitnessManager"/> class.
         /// </summary>
-        /// <param name="usersRepository">Collection of users.</param>
+        /// <param name="userManager">An instance of the class UserManager.</param>
         public FitnessManager(UserManager userManager)
         {
             this.UserManager = userManager;
@@ -140,24 +136,24 @@
         /// <param name="regimen">The regimen.</param>
         public void ExportRegimenToPdf(Regimen regimen)
         {
-            //var diet = regimen.Diet;
+            // var diet = regimen.Diet;
 
-            //var dataTable = new DataTable("Diet");
-            //dataTable.Columns.Add(new DataColumn("ColumnHeader1", typeof(Int32)));
-            //dataTable.Columns.Add(new DataColumn("ColumnHeader2", typeof(string)));
-            //DataRow dataRow;
-            //int rows = 5;
-            //for (int i = 0; i < rows; i++)
-            //{
-            //    dataRow = dataTable.NewRow();
-            //    dataRow["ColumnHeader1"] = null;    // 1st column content 
-            //    dataRow["ColumnHeader2"] = null;    // 2nd column content
-            //    dataTable.Rows.Add(dataRow);
-            //}
+            // var dataTable = new DataTable("Diet");
+            // dataTable.Columns.Add(new DataColumn("ColumnHeader1", typeof(Int32)));
+            // dataTable.Columns.Add(new DataColumn("ColumnHeader2", typeof(string)));
+            // DataRow dataRow;
+            // int rows = 5;
+            // for (int i = 0; i < rows; i++)
+            // {
+            //     dataRow = dataTable.NewRow();
+            //     dataRow["ColumnHeader1"] = null;    // 1st column content 
+            //     dataRow["ColumnHeader2"] = null;    // 2nd column content
+            //     dataTable.Rows.Add(dataRow);
+            // }
 
-            //dataTable.AcceptChanges();
+            // dataTable.AcceptChanges();
 
-            //FileAccess.WritePdf("Diet", dataTable, @"..\..\..\..\Diet.pdf");
+            // FileAccess.WritePdf("Diet", dataTable, @"..\..\..\..\Diet.pdf");
         }
     }
 }

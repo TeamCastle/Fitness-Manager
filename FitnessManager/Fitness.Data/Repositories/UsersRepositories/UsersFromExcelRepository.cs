@@ -2,45 +2,33 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
+    using System.Data;
 
+    using Fitness.Data.Access;
     using Fitness.Models;
 
     /// <summary>
-    /// The 'ConcreteHandler' class. Gets the collection of users from text file
+    /// Gets the collection of users from Excel file.
     /// </summary>
     public class UsersFromExcelRepository : AbstractUsersRepository
     {
         /// <summary>
-        /// Path to text file that contains the users
+        /// Path to the Excel file that contains the users.
         /// </summary>
-        private const string UsersFilePath = "../../../Fitness.Data/Database/Users/Users.xls";
+        private const string ExcelFilePath = "../../../Fitness.Data/Database/users.xlsx";
 
         /// <summary>
-        /// Reads a users from external file repository
+        /// Reads a users from external Excel file repository.
         /// </summary>
-        /// <returns>Returns a list of collection of users</returns>
+        /// <returns>Returns a list of collection of users.</returns>
         public override IList<User> ReadUsers()
         {
-            if (!File.Exists(UsersFilePath))
+            if (!System.IO.File.Exists(ExcelFilePath))
             {
                 return this.Successor.ReadUsers();
             }
 
-            var usersCollection = new List<User>();
-
-            using (var reader = new StreamReader(UsersFilePath))
-            {
-                while (!reader.EndOfStream)
-                {
-                    var user = reader.ReadLine();
-
-                    if (!string.IsNullOrEmpty(user))
-                    {
-                        usersCollection.Add(new User(null, null));
-                    }
-                }
-            }
+            var usersCollection = this.GetCollection(FileAccess.ReadExcel(ExcelFilePath).Rows);
 
             return usersCollection;
         }

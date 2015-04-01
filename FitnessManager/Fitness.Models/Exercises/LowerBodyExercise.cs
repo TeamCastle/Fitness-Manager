@@ -5,7 +5,6 @@
         public LowerBodyExercise(string description, MuscleGroup muscleGroup)
             : base(description, ExerciseType.LowerBody, muscleGroup)
         {
-
         }
     }
 }

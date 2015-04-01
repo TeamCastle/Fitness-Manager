@@ -6,8 +6,7 @@
 
     public abstract class TrainingProgram : ITrainingProgram
     {
-        //TODO: This class must be implemented
-
+        // TODO: This class must be implemented
         public TrainingProgram(string name, Intensity intensity)
         {
             this.Name = name;   

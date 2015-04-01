@@ -2,12 +2,10 @@
 {
     public class RookieTraining : TrainingProgram
     {
-        //TODO: This class must be implemented
-
+        // TODO: This class must be implemented
         public RookieTraining(string name, Intensity intensity)
-            :base(name, intensity)
+            : base(name, intensity)
         {
-
         }
     }
 }

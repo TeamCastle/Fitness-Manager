@@ -10,7 +10,6 @@
         public Strength(string name, ITrainingProgram trainingProgram, IDiet diet, int duration)
             : base(name, trainingProgram, diet, duration)
         {
-
         }
     }
 }

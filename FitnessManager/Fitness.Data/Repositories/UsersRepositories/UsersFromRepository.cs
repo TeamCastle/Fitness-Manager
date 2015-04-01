@@ -1,6 +1,5 @@
 ﻿namespace Fitness.Data.Repositories.UsersRepositories
 {
-    using System;
     using System.Collections.Generic;
 
     using Fitness.Models;
@@ -40,9 +39,9 @@
         }
 
         /// <summary>
-        /// Reads a list of users from some repository
+        /// Reads a list of users from some repository.
         /// </summary>
-        /// <returns>Returns a collection of users</returns>
+        /// <returns>Returns a collection of users.</returns>
         public override IList<User> ReadUsers()
         {
             this.usersFromDb.SetSuccessor(this.usersFromExcel);

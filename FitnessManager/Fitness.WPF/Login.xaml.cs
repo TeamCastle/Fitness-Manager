@@ -23,12 +23,11 @@
     {
         public Login()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void LoginButtonClick(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

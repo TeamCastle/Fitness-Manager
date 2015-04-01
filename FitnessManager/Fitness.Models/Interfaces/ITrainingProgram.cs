@@ -4,8 +4,7 @@
 
     public interface ITrainingProgram
     {
-        //TODO: This interface must be implemented
-
+        // TODO: This interface must be implemented
         void ShowCurrentDayExercises(TrainingDay day);
     }
 }

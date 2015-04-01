@@ -116,6 +116,10 @@
     <Resource Include="Images\login.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fitness.Data\Fitness.Data.csproj">
+      <Project>{7aa42036-d274-4281-b46d-229d13ca703a}</Project>
+      <Name>Fitness.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fitness.Engine\Fitness.Engine.csproj">
       <Project>{01b6c8e5-45e0-4e58-9cc6-d78940a83142}</Project>
       <Name>Fitness.Engine</Name>

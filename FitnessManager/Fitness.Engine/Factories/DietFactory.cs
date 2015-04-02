@@ -14,11 +14,11 @@
             }
             else if(dietType == "Strength")
             {
-                return new StrengthDiet(kilos, height, age, sex, 0);
+                return new StrengthDiet(kilos, height, age, sex, 1);
             }
             else if(dietType == "WeightLoss")
             {
-                return new WeightLossDiet(kilos, height, age, sex, 0);
+                return new WeightLossDiet(kilos, height, age, sex, 1);
             }
             else
             {

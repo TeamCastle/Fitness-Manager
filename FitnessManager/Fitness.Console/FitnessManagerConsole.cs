@@ -72,7 +72,7 @@
             string currentRegimen = this.currentUser.Regimen.GetType().Name;            
             this.currentUser.Regimen.Diet = this.dietFactory
                 .CreateDiet(currentRegimen, this.currentUser.Weight, this.currentUser.Height, this.currentUser.Age, this.currentUser.Sex);
-
+            this.Renderer.RenderMessage(Messages.SuccessfulDietSetMessage);
             this.dietFactory = null;
         }
 
@@ -98,6 +98,7 @@
             }
 
             this.currentUser.Regimen.Program = trainFactory.CreateTrainingProgram("Unknown", intensity, currentRegimen);
+            this.Renderer.RenderMessage(Messages.SuccessfulTrainingSetMessage);
             this.trainFactory = null;
         }
 

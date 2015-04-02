@@ -17,5 +17,7 @@
         public static string ChooseRegimenMessage = "Now choose your regimen!";
         public static string RegimenCreationHelpMessage = "Press [R] for Rookie, [S] for Strength or [W] for WeightLoss";
         public static string ChooseIntensityMessage = "Enter how many days do you want to train(choose between 3, 4, 5, 6): ";
+        public static string SuccessfulTrainingSetMessage = "Your training plan is created successful";
+        public static string SuccessfulDietSetMessage = "Your diet is created successful";
     }
 }

@@ -4,6 +4,6 @@
 
     public interface ITrainingFactory
     {
-        ITrainingProgram CreateTrainingProgram(string name, Intensity intensity, ProgramType progType);
+        ITrainingProgram CreateTrainingProgram(string name, Intensity intensity,string progType);
     }
 }

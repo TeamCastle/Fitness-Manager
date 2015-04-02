@@ -9,7 +9,7 @@
         /// </summary>
         /// <param name="userManager">An instance of UserManager class.</param>
         public FitnessManagerWpf(UserManager userManager)
-            : base(userManager)
+            : base(userManager, null)
         {
         }
     }

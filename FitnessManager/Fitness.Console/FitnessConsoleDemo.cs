@@ -20,8 +20,8 @@
             var usersFromRepository = new UsersFromRepository(usersFromDb, usersFromExcel, usersFromStaticList);
 
             var userManager = new UserManager(usersFromRepository);
-
-            FitnessManager fitnessManager = new FitnessManagerConsole(userManager);
+            var renderer = new ConsoleRenderer();
+            FitnessManager fitnessManager = new FitnessManagerConsole(userManager, renderer);
             fitnessManager.Start();
         }
     }

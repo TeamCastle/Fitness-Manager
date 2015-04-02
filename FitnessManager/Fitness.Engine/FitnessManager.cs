@@ -5,6 +5,7 @@
 
     using Fitness.Models;
     using Fitness.Models.UserRegimens;
+    using Fitness.Engine.Interfaces;
 
     /// <summary>
     /// Main abstract class of the Fitness Manager.
@@ -19,11 +20,14 @@
         /// Initializes a new instance of the <see cref="FitnessManager"/> class.
         /// </summary>
         /// <param name="userManager">An instance of the class UserManager.</param>
-        public FitnessManager(UserManager userManager)
+        public FitnessManager(UserManager userManager, IRenderer renderer)
         {
             this.UserManager = userManager;
             this.Users = userManager.Users;
+            this.Renderer = renderer;
         }
+
+        public IRenderer Renderer { get; set; }
 
         public UserManager UserManager { get; set; }
 
@@ -41,7 +45,11 @@
             {
                 try
                 {
-                    Console.Write("Press [R] to Register, [L] to Login, [Q] to Logout or [S] to go... ");
+                    if (this.Renderer != null)
+                    {
+                        Renderer.RenderMessage(Messages.IntroMessage);
+                    }
+                    
                     var key = Console.ReadKey();
                     if (key.Key != ConsoleKey.L && key.Key != ConsoleKey.R && key.Key != ConsoleKey.Q && key.Key != ConsoleKey.S)
                     {
@@ -52,11 +60,11 @@
                     {
                         // Register
                         case ConsoleKey.R:
-                            Console.Write("\nUsername: ");
+                            this.Renderer.RenderMessage(Messages.EnterUsernameMessage);
                             username = Console.ReadLine();
-                            Console.Write("Password: ");
+                            this.Renderer.RenderMessage(Messages.EnterPasswordMessage);
                             password = Console.ReadLine();
-                            Console.Write("Press [M] for Male or [F] for Female: ");
+                            this.Renderer.RenderMessage(Messages.EnterGenderMessage);
                             var sexKey = Console.ReadKey();
                             if (sexKey.Key != ConsoleKey.M && sexKey.Key != ConsoleKey.F)
                             {
@@ -76,15 +84,14 @@
                                     break;
                             }
 
-                            Console.Write("\nAge: ");
+                            this.Renderer.RenderMessage(Messages.AgeMessage);
                             var age = int.Parse(Console.ReadLine());
-                            Console.Write("Height, [cm]: ");
-                            var height = int.Parse(Console.ReadLine());   // in cm
-                            Console.Write("Weight, [kg]: ");
-                            var weight = int.Parse(Console.ReadLine());   // in kg
+                            this.Renderer.RenderMessage(Messages.HeightMessage);
+                            var height = int.Parse(Console.ReadLine());
+                            this.Renderer.RenderMessage(Messages.WeightMessage);
+                            var weight = int.Parse(Console.ReadLine());
                             this.UserManager.Register(new User(username, password, sex, age, height, weight));
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("Registered");
+                            this.Renderer.RenderMessage(Messages.RegisteredMessage);
                             break;
 
                         // Login
@@ -100,7 +107,7 @@
 
                         // Logout
                         case ConsoleKey.Q:
-                            Console.Write("\nUsername: ");
+                            this.Renderer.RenderMessage(Messages.EnterUsernameMessage);
                             username = Console.ReadLine();
                             this.UserManager.Logout(username);
                             Console.ForegroundColor = ConsoleColor.Green;

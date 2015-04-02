@@ -12,10 +12,6 @@
     /// </summary>
     public abstract class FitnessManager
     {
-        private static string username;
-
-        private static string password;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="FitnessManager"/> class.
         /// </summary>
@@ -23,7 +19,6 @@
         public FitnessManager(UserManager userManager, IRenderer renderer)
         {
             this.UserManager = userManager;
-            this.Users = userManager.Users;
             this.Renderer = renderer;
         }
 
@@ -31,106 +26,31 @@
 
         public UserManager UserManager { get; set; }
 
-        /// <summary>
-        /// Collection from Users and their login states.
-        /// </summary>
-        protected IDictionary<User, bool> Users { get; set; }
 
         /// <summary>
         /// Runs the application.
         /// </summary>
-        public void Start()
+        public virtual void Start()
         {
-            while (true)
-            {
-                try
-                {
-                    if (this.Renderer != null)
-                    {
-                        Renderer.RenderMessage(Messages.IntroMessage);
-                    }
-                    
-                    var key = Console.ReadKey();
-                    if (key.Key != ConsoleKey.L && key.Key != ConsoleKey.R && key.Key != ConsoleKey.Q && key.Key != ConsoleKey.S)
-                    {
-                        throw new Exception("\nWrong input!");
-                    }
+            //Override main loop for your client
+        }
 
-                    switch (key.Key)
-                    {
-                        // Register
-                        case ConsoleKey.R:
-                            this.Renderer.RenderMessage(Messages.EnterUsernameMessage);
-                            username = Console.ReadLine();
-                            this.Renderer.RenderMessage(Messages.EnterPasswordMessage);
-                            password = Console.ReadLine();
-                            this.Renderer.RenderMessage(Messages.EnterGenderMessage);
-                            var sexKey = Console.ReadKey();
-                            if (sexKey.Key != ConsoleKey.M && sexKey.Key != ConsoleKey.F)
-                            {
-                                throw new Exception("\nWrong input!");
-                            }
+        public virtual void HandleLogout(string username)
+        {
+            this.UserManager.Logout(username);
+            this.Renderer.RenderMessage(Messages.LogoutMessage);
+        }
 
-                            var sex = Sex.Male;
-                            switch (sexKey.Key)
-                            {
-                                case ConsoleKey.M:
-                                    sex = Sex.Male;
-                                    break;
-                                case ConsoleKey.F:
-                                    sex = Sex.Female;
-                                    break;
-                                default:
-                                    break;
-                            }
+        public virtual void HandleLogin(string username, string password)
+        {
+            this.UserManager.Login(username, password);
+            this.Renderer.RenderMessage(Messages.LoggedInMessage);
+        }
 
-                            this.Renderer.RenderMessage(Messages.AgeMessage);
-                            var age = int.Parse(Console.ReadLine());
-                            this.Renderer.RenderMessage(Messages.HeightMessage);
-                            var height = int.Parse(Console.ReadLine());
-                            this.Renderer.RenderMessage(Messages.WeightMessage);
-                            var weight = int.Parse(Console.ReadLine());
-                            this.UserManager.Register(new User(username, password, sex, age, height, weight));
-                            this.Renderer.RenderMessage(Messages.RegisteredMessage);
-                            break;
-
-                        // Login
-                        case ConsoleKey.L:
-                            Console.Write("\nUsername: ");
-                            username = Console.ReadLine();
-                            Console.Write("Password: ");
-                            password = Console.ReadLine();
-                            this.UserManager.Login(username, password);
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("Logged in");
-                            break;
-
-                        // Logout
-                        case ConsoleKey.Q:
-                            this.Renderer.RenderMessage(Messages.EnterUsernameMessage);
-                            username = Console.ReadLine();
-                            this.UserManager.Logout(username);
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("Logged out");
-                            break;
-
-                        // Start the app
-                        case ConsoleKey.S:
-                            // TODO: Get the diet and training program
-                            throw new NotImplementedException("\nNot Implemented!");
-                        default:
-                            break;
-                    }
-
-                    Console.ResetColor();
-                }
-                catch (Exception ex)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(ex.Message);
-                    Console.ResetColor();
-                }
-            }
+        public virtual void HandleUserRegistration(User user)
+        {           
+            this.UserManager.Register(user);
+            this.Renderer.RenderMessage(Messages.RegisteredMessage);
         }
 
         /// <summary>

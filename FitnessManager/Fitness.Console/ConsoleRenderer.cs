@@ -7,7 +7,7 @@
     {
         public void RenderMessage(string message)
         {
-            Console.Write(message);
+            Console.WriteLine(message);
         }
     }
 }

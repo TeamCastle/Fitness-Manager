@@ -7,6 +7,7 @@
     using Fitness.Data.Interfaces;
     using Fitness.Data.Repositories.UsersRepositories;
     using Fitness.Models;
+using Fitness.Models.UserRegimens;
 
     public class UserManager
     {
@@ -73,22 +74,26 @@
         /// <param name="user">The user.</param>
         public void Logout(string username)
         {
-            for (int i = 0; i < this.Users.Count; i++)
+            var currentUser = this.Users.Keys.FirstOrDefault(x => x.Username == username);
+            if (currentUser != null)
             {
-                var currentUser = this.Users.ElementAt(i).Key;
-                if (currentUser.Username == username)
-                {
-                    if (!this.Users.ElementAt(i).Value)
-                    {
-                        throw new Exception("This user is already logged out!");
-                    }
-
-                    this.Users[currentUser] = false;
-                    return;
-                }
+                this.Users[currentUser] = false;
+                return;
             }
 
             throw new MissingMemberException("This user is not logged!");
+                       
+        }
+
+        public Regimen GetUserRegimen(string username)
+        {
+            var currentUser = this.Users.Keys.FirstOrDefault(x => x.Username == username);
+            if (currentUser != null)
+            {
+                return currentUser.Regimen as Regimen;
+            }
+
+            return null;
         }
 
         private void GetUsers(IUsersRepository usersRepository)

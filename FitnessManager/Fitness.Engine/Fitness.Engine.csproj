@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\InvalidTrainingException.cs" />
+    <Compile Include="Factories\DietFactory.cs" />
+    <Compile Include="Factories\RegimenFactory.cs" />
     <Compile Include="Factories\TrainingFactory.cs" />
     <Compile Include="FitnessManager.cs" />
     <Compile Include="Interfaces\IRenderer.cs" />

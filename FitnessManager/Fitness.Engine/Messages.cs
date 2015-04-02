@@ -16,5 +16,6 @@
         public static string LogoutMessage = "Logout successful";
         public static string ChooseRegimenMessage = "Now choose your regimen!";
         public static string RegimenCreationHelpMessage = "Press [R] for Rookie, [S] for Strength or [W] for WeightLoss";
+        public static string ChooseIntensityMessage = "Enter how many days do you want to train(choose between 3, 4, 5, 6): ";
     }
 }

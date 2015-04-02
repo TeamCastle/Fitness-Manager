@@ -7,7 +7,7 @@
     using Fitness.Data.Interfaces;
     using Fitness.Data.Repositories.UsersRepositories;
     using Fitness.Models;
-using Fitness.Models.UserRegimens;
+    using Fitness.Models.UserRegimens;
 
     public class UserManager
     {
@@ -23,7 +23,7 @@ using Fitness.Models.UserRegimens;
         /// <summary>
         /// Collection from Users and their login states ('true' for logged).
         /// </summary>
-        public Dictionary<User, bool> Users { get; private set; }
+        public List<User> Users { get; private set; }
 
         /// <summary>
         /// Creates a registration of some new user.
@@ -31,41 +31,30 @@ using Fitness.Models.UserRegimens;
         /// <param name="user">The new user.</param>
         public void Register(User user)
         {
-            if (this.Users.Any(u => u.Key.Username == user.Username))
+            if (this.Users.Any(u => u.Username == user.Username))
             {
                 throw new Exception("Such username is already used!");
             }
 
-            this.Users.Add(user, false);
+            this.Users.Add(user);
         }
 
         /// <summary>
         /// Login the user.
         /// </summary>
         /// <param name="user">The user.</param>
-        public void Login(string username, string password)
+        public User Login(string username, string password)
         {
-            for (int i = 0; i < this.Users.Count; i++)
+            var loginUser = this.Users.Where(x => x.Username == username).FirstOrDefault(y => y.Password == password);
+            if (loginUser != null)
             {
-                var currentUser = this.Users.ElementAt(i).Key;
-                if (currentUser.Username == username)
-                {
-                    if (this.Users.ElementAt(i).Value)
-                    {
-                        throw new Exception("This user is already logged in!");
-                    }
-
-                    if (currentUser.Password == password)
-                    {
-                        this.Users[currentUser] = true;
-                        return;
-                    }
-
-                    throw new Exception("Wrong password!");
-                }
+                return loginUser;
             }
-
-            throw new MissingMemberException("This user is not registered!");
+            else
+            {
+                throw new ArgumentException("Invalid username or password!");
+            }
+            
         }
 
         /// <summary>
@@ -74,10 +63,9 @@ using Fitness.Models.UserRegimens;
         /// <param name="user">The user.</param>
         public void Logout(string username)
         {
-            var currentUser = this.Users.Keys.FirstOrDefault(x => x.Username == username);
+            var currentUser = this.Users.FirstOrDefault(x => x.Username == username);
             if (currentUser != null)
-            {
-                this.Users[currentUser] = false;
+            {             
                 return;
             }
 
@@ -87,7 +75,7 @@ using Fitness.Models.UserRegimens;
 
         public Regimen GetUserRegimen(string username)
         {
-            var currentUser = this.Users.Keys.FirstOrDefault(x => x.Username == username);
+            var currentUser = this.Users.FirstOrDefault(x => x.Username == username);
             if (currentUser != null)
             {
                 return currentUser.Regimen as Regimen;
@@ -98,8 +86,8 @@ using Fitness.Models.UserRegimens;
 
         private void GetUsers(IUsersRepository usersRepository)
         {
-            this.Users = new Dictionary<User, bool>();
-            usersRepository.Users.ToList().ForEach(user => this.Users.Add(user, false));
+            this.Users = new List<User>();
+            usersRepository.Users.ToList().ForEach(user => this.Users.Add(user));
         }
     }
 }

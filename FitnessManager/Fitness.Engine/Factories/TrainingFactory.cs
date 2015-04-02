@@ -7,17 +7,17 @@
 
     public class TrainingFactory : ITrainingFactory
     {
-        public ITrainingProgram CreateTrainingProgram(string name, Intensity intensity, ProgramType programType)
+        public ITrainingProgram CreateTrainingProgram(string name, Intensity intensity,string programType)
         {
-            if (programType == ProgramType.Rookie)
+            if (programType == "Rookie")
             {
                 return new RookieTraining(name, intensity);
             }
-            else if (programType == ProgramType.Strength)
+            else if (programType == "Strength")
             {
                 return new StrengthTraining(name, intensity);
             }
-            else if (programType == ProgramType.WeightLoss)
+            else if (programType == "WeightLoss")
             {
                 return new WeightLossTraining(name, intensity);
             }

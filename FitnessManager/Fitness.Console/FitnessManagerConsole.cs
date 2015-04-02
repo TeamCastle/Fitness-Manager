@@ -5,10 +5,15 @@
     using Fitness.Engine;
     using Fitness.Models;
     using Fitness.Models.UserRegimens;
+    using Fitness.Engine.Factories;
+    using Fitness.Models.TrainingPrograms;
 
     public class FitnessManagerConsole : FitnessManager
     {
         private User currentUser;
+        private RegimenFactory regFactory;
+        private TrainingFactory trainFactory;
+        private DietFactory dietFactory;
         /// <summary>
         /// Initializes a new instance of the <see cref="FitnessManagerConsole"/> class.
         /// </summary>
@@ -17,23 +22,34 @@
             : base(userManager, renderer)
         {
             this.currentUser = null;
+            this.dietFactory = new DietFactory();
         }
 
         public override void Start()
         {
-            bool isLogged = false;
             while (true)
             {
                 try
                 {
-                    if (isLogged != true)
+                    if (currentUser == null)
                     {
                         HandleUserLoginRegister();
-                        isLogged = true;
                     }
                     else
                     {
-                        HandleUserRegimen();
+                        if (currentUser.Regimen == null)
+                        {
+                            HandleUserRegimen();
+                            HandleUserTrainingProgram();
+                            HandleUserDiet();
+                        }
+                        else
+                        {
+                            //TODO: Do something with regimen:
+                            //1. calculate diet
+                            //2. get exercices for current day
+                        }
+                        
                     }
                     
                 }
@@ -46,13 +62,48 @@
             }
         }
 
+        private void HandleUserDiet()
+        {
+            if (this.dietFactory == null)
+            {
+                this.dietFactory = new DietFactory();
+            }
+
+            string currentRegimen = this.currentUser.Regimen.GetType().Name;            
+            this.currentUser.Regimen.Diet = this.dietFactory
+                .CreateDiet(currentRegimen, this.currentUser.Weight, this.currentUser.Height, this.currentUser.Age, this.currentUser.Sex);
+
+            this.dietFactory = null;
+        }
+
+        private void HandleUserTrainingProgram()
+        {
+            //Lazy loading
+            if (this.trainFactory == null)
+            {
+                this.trainFactory = new TrainingFactory();
+            }
+
+            string currentRegimen = this.currentUser.Regimen.GetType().Name;
+            this.Renderer.RenderMessage(Messages.ChooseIntensityMessage);
+            int intensityChoose = int.Parse(Console.ReadLine());
+            Intensity intensity;
+            switch (intensityChoose)
+            {
+                case 3: intensity = Intensity.ThreeDays; break;
+                case 4: intensity = Intensity.FourDays; break;
+                case 5: intensity = Intensity.FiveDays; break;
+                case 6: intensity = Intensity.SixDays; break;
+                default: throw new ArgumentException("Invalid intensity value");
+            }
+
+            this.currentUser.Regimen.Program = trainFactory.CreateTrainingProgram("Unknown", intensity, currentRegimen);
+            this.trainFactory = null;
+        }
+
         private void HandleUserRegimen()
         {
-            if (this.currentUser.Regimen != null)
-            {
-                
-            }
-            else
+            if (this.currentUser.Regimen == null)
             {
                 HandleUserRegimenCreation();
             }
@@ -60,15 +111,19 @@
 
         private void HandleUserRegimenCreation()
         {
+            //Lazy loading
+            if (this.regFactory == null)
+            {
+                this.regFactory = new RegimenFactory();
+            }
+
             this.Renderer.RenderMessage(Messages.ChooseRegimenMessage);
             this.Renderer.RenderMessage(Messages.RegimenCreationHelpMessage);
             string input = Console.ReadLine().ToUpper();
-            switch(input)
-            {
-               //TODO: Must be implemented!
-                default:
-                    break;
-            }
+            var currentRegimen = regFactory.CreateRegimen(input);
+            this.currentUser.Regimen = currentRegimen;
+
+            this.regFactory = null;
         }
 
         private void HandleUserLoginRegister()

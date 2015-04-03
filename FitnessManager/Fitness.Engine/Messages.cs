@@ -19,5 +19,6 @@
         public static string ChooseIntensityMessage = "Enter how many days do you want to train(choose between 3, 4, 5, 6): ";
         public static string SuccessfulTrainingSetMessage = "Your training plan is created successful";
         public static string SuccessfulDietSetMessage = "Your diet is created successful";
+        public static string ShowUserMenu = "If you want to see your exercises for today press [S] or [D] for your diet.";
     }
 }

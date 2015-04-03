@@ -1,12 +1,12 @@
 ﻿namespace Fitness.Console
 {
     using System;
-    using System.Linq;
+
     using Fitness.Engine;
-    using Fitness.Models;
-    using Fitness.Models.UserRegimens;
     using Fitness.Engine.Factories;
+    using Fitness.Models;
     using Fitness.Models.TrainingPrograms;
+    using Fitness.Engine.Interfaces;
 
     public class FitnessManagerConsole : FitnessManager
     {
@@ -14,6 +14,7 @@
         private RegimenFactory regFactory;
         private TrainingFactory trainFactory;
         private DietFactory dietFactory;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FitnessManagerConsole"/> class.
         /// </summary>
@@ -45,7 +46,8 @@
                         }
                         else
                         {
-                            //TODO: Do something with regimen:
+                            //TODO: Do something with regimen
+                            ShowUserMenuAfterLogin();
                             //1. calculate diet
                             //2. get exercices for current day
                         }
@@ -59,6 +61,19 @@
                     Console.WriteLine(ex.Message);
                     Console.ResetColor();
                 }
+            }
+        }
+
+        private void ShowUserMenuAfterLogin()
+        {
+            this.Renderer.RenderMessage(Messages.ShowUserMenu);
+            string input = Console.ReadLine();
+            switch(input)
+            {
+                case "S": this.Renderer.RenderMessage(this.currentUser.Regimen.Program.ShowCurrentDayExercises()); break;
+                case "D": this.Renderer.RenderMessage(this.currentUser.Regimen.Diet.ShowDietCalculation().ToString()); break;
+                default:
+                    throw new ArgumentException("Invalid user input");
             }
         }
 

@@ -3,10 +3,10 @@
     using System;
 
     using Fitness.Models.Interfaces;
+    using System.Collections.Generic;
 
     public abstract class TrainingProgram : ITrainingProgram
     {
-        // TODO: This class must be implemented
         public TrainingProgram(string name, Intensity intensity)
         {
             this.Name = name;   
@@ -17,9 +17,11 @@
 
         public Intensity Intensity { get; set; }
 
-        public void ShowCurrentDayExercises(TrainingDay day)
+        public IList<IExercise> Exercises { get; set; }
+
+        public virtual string ShowCurrentDayExercises()
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

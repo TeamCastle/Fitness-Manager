@@ -51,9 +51,9 @@
                             //1. calculate diet
                             //2. get exercices for current day
                         }
-                        
+
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -68,7 +68,7 @@
         {
             this.Renderer.RenderMessage(Messages.ShowUserMenu);
             string input = Console.ReadLine();
-            switch(input)
+            switch (input)
             {
                 case "S": this.Renderer.RenderMessage(this.currentUser.Regimen.Program.ShowCurrentDayExercises()); break;
                 case "D": this.Renderer.RenderMessage(this.currentUser.Regimen.Diet.ShowDietCalculation().ToString()); break;
@@ -84,7 +84,7 @@
                 this.dietFactory = new DietFactory();
             }
 
-            string currentRegimen = this.currentUser.Regimen.GetType().Name;            
+            string currentRegimen = this.currentUser.Regimen.GetType().Name;
             this.currentUser.Regimen.Diet = this.dietFactory
                 .CreateDiet(currentRegimen, this.currentUser.Weight, this.currentUser.Height, this.currentUser.Age, this.currentUser.Sex);
             this.Renderer.RenderMessage(Messages.SuccessfulDietSetMessage);

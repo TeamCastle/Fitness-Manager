@@ -7,7 +7,6 @@
    * Ivan Tilev ([@ ivantilev](https://github.com/ivantilev))
    * Ivanka Zaicheva ([@ vanqz1](https://github.com/vanqz1))
    * Ivaylo Paskalev ([@ IvayloPaskalev](https://github.com/IvayloPaskalev))
-   * Lilia Markova ([@ sheizy](https://github.com/sheizy))
    * Miroslav Vasilev ([@ Miroslav1999](https://github.com/Miroslav1999))
    * Simeon Cholakov ([@ simoto](https://github.com/simoto))
    * Stanislav Iliev ([@ Termininja](https://github.com/Termininja))

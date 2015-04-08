@@ -1,10 +1,24 @@
 ﻿namespace Fitness.Models.Exercises
 {
-    public class LowerBodyExercise : Exercise
+    using Fitness.Models.Interfaces;
+    using System.Collections.Generic;
+    using System;
+
+    public static class LowerBodyExercise
     {
-        public LowerBodyExercise(string description, MuscleGroup muscleGroup)
-            : base(description, ExerciseType.LowerBody, muscleGroup)
+        public static ICollection<IExercise> RookieLowerBodyTrainingExercises()
         {
+            throw new NotImplementedException();
+        }
+
+        public static ICollection<IExercise> StrenghtLowerBodyTrainingExercises()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static ICollection<IExercise> WeightLossLowerBodyTrainingExercises()
+        {
+            throw new NotImplementedException();
         }
     }
 }

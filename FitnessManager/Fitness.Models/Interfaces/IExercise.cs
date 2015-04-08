@@ -1,13 +1,15 @@
 ﻿namespace Fitness.Models.Interfaces
 {
     using Fitness.Models.Exercises;
+    using System.Collections;
 
     public interface IExercise
     {
         string Description { get; set; }
 
-        ExerciseType ExerciseType { get; set; }
+        int NumberOfSet { get; set; }
 
-        MuscleGroup MuscleGroup { get; set; }
+        int RepeatCount { get; set; }
+
     }
 }

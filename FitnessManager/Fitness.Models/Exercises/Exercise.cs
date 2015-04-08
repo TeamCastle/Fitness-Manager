@@ -1,20 +1,52 @@
 ﻿namespace Fitness.Models.Exercises
 {
     using Fitness.Models.Interfaces;
+    using System;
 
     public abstract class Exercise : IExercise
     {
-        public Exercise(string description, ExerciseType type, MuscleGroup muscleGroup)
+        private int repeatCount;
+
+        private int numberOfSet;
+
+        public Exercise(int numSet,int repeatCount)
         {
-            this.Description = description;
-            this.ExerciseType = type;
-            this.MuscleGroup = muscleGroup;
+            this.NumberOfSet = numSet;
+            this.RepeatCount = repeatCount;
         }
 
         public string Description { get; set; }
 
-        public ExerciseType ExerciseType { get; set; }
+        public int RepeatCount
+        {
+            get { return this.repeatCount; }
 
-        public MuscleGroup MuscleGroup { get; set; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Invalid value for RepeatCount.");
+                }
+
+                this.repeatCount = value;
+            }
+        }
+
+
+        public int NumberOfSet
+        {
+             get { return this.numberOfSet; }
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Invalid value for NumberOfSet.");
+                }
+
+                this.numberOfSet = value;
+            }
+        }
     }
+
 }

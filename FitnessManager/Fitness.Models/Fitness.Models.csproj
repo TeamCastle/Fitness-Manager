@@ -40,11 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Diets\DietTypeEnum.cs" />
+    <Compile Include="Exercises\BackExercise.cs" />
+    <Compile Include="Exercises\ExerciseSuccessors\BackExtensions.cs" />
+    <Compile Include="Exercises\ExerciseSuccessors\Deadlift.cs" />
+    <Compile Include="Exercises\ExerciseSuccessors\DumbleRomanianDeadlift.cs" />
+    <Compile Include="Exercises\ExerciseSuccessors\LandmineOneArmRow.cs" />
+    <Compile Include="Exercises\ExerciseSuccessors\LatPulldown.cs" />
+    <Compile Include="Exercises\ExerciseSuccessors\SeatedCableRow.cs" />
+    <Compile Include="Exercises\ExerciseSuccessors\WeightedPullup.cs" />
     <Compile Include="Sex.cs" />
     <Compile Include="Exercises\Exercise.cs" />
-    <Compile Include="Exercises\ExerciseType.cs" />
     <Compile Include="Exercises\LowerBodyExercise.cs" />
-    <Compile Include="Exercises\MuscleGroup.cs" />
     <Compile Include="Diets\WeightLossDiet.cs" />
     <Compile Include="Diets\Diet.cs" />
     <Compile Include="Diets\RookieDiet.cs" />
@@ -73,6 +79,7 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

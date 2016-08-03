@@ -3,10 +3,8 @@
 
 ##Contributors:
    * Andrey Mitev ([@ AndrewMitev](https://github.com/AndrewMitev))
-   * Natali Petkova ([@ Das8Beste](https://github.com/Das8Beste))
-   * Ivan Tilev ([@ ivantilev](https://github.com/ivantilev))
    * Ivanka Zaicheva ([@ vanqz1](https://github.com/vanqz1))
-   * Ivaylo Paskalev ([@ IvayloPaskalev](https://github.com/IvayloPaskalev))
+   * <del>Ivaylo Paskalev ([@ IvayloPaskalev](https://github.com/IvayloPaskalev))</del>
    * Miroslav Vasilev ([@ Miroslav1999](https://github.com/Miroslav1999))
    * Simeon Cholakov ([@ simoto](https://github.com/simoto))
    * Stanislav Iliev ([@ Termininja](https://github.com/Termininja))
